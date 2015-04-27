@@ -7,39 +7,38 @@
                 </div>
             </div>
 
-            {{#.}} {{#if Details.length}}
+            {{#.}}
 
-            <div class="span4">
-                <span class="ListRecords"></span>
+                {{#if Details.length}}
 
-                <div style="background-color:#f2f2f2;padding:0 25px;">
-                    <span class="ListRecords"></span>
+                <div class="span4">
+                    <div style="background-color:#f2f2f2;padding:0 25px;">
+                        <h4 style="line-height:55px;">
+                            {{Location}}
+                        </h4>
+                    </div>
 
-                    <h4 style="line-height:55px;"><span class=
-                    "ListRecords">{{Location}}</span></h4>
+                    <div style="padding:0 25px;">
+                        {{#Details}}
+                        
+                            <div>
+                                <a href="http://www.outsystems.com/company/careers/p/1/us/{{JobTitle}}">
+                                    <p>{{JobTitle}}</p>
+                                </a>
+                            </div>
+
+                            <div style="color: #808080;margin-top: -10px;">
+                                <p>{{SmallDescription}}</p>
+                            </div>
+
+                        {{/Details}}
+                    </div>
                 </div>
 
-                <div style="padding:0 25px;">
-                    <span class="ListRecords"><span class=
-                    "ListRecords">{{#Details}}</span></span>
 
-                    <div>
-                        <span class="ListRecords"><a href=
-                        "http://www.outsystems.com/company/careers/p/1/us/{{JobTitle}}">
-                        <p><span class=
-                        "ListRecords">{{JobTitle}}</span></p></a></span>
-                    </div><span class="ListRecords"></span>
+                {{/if}} 
 
-                    <div style="color: #808080;margin-top: -10px;">
-                        <span class="ListRecords"></span>
-
-                        <p><span class=
-                        "ListRecords">{{SmallDescription}}</span></p>
-                    </div><span class="ListRecords">{{/Details}}</span>
-                </div>
-            </div>
-
-            {{/if}} {{/.}}
+            {{/.}}
         
         </div>
     </div>
