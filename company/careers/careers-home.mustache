@@ -1,0 +1,46 @@
+<div class="content-layout-simplify">
+    <div class="container">
+        <div class="row">
+            <div>
+                <div class="span12">
+                    <h2>Job Openings</h2>
+                </div>
+            </div>
+
+            {{#.}} {{#if JobPosts.length}}
+
+            <div class="span4">
+                <span class="ListRecords"></span>
+
+                <div style="background-color:#f2f2f2;padding:0 25px;">
+                    <span class="ListRecords"></span>
+
+                    <h4 style="line-height:55px;"><span class=
+                    "ListRecords">{{Name}}</span></h4>
+                </div>
+
+                <div style="padding:0 25px;">
+                    <span class="ListRecords"><span class=
+                    "ListRecords">{{#JobPosts}}</span></span>
+
+                    <div>
+                        <span class="ListRecords"><a href=
+                        "http://www.outsystems.com/company/careers/p/1/us/{{JobTitle}}">
+                        <p><span class=
+                        "ListRecords">{{JobTitle}}</span></p></a></span>
+                    </div><span class="ListRecords"></span>
+
+                    <div style="color: #808080;margin-top: -10px;">
+                        <span class="ListRecords"></span>
+
+                        <p><span class=
+                        "ListRecords">{{SmallDescription}}</span></p>
+                    </div><span class="ListRecords">{{/JobPosts}}</span>
+                </div>
+            </div>
+
+            {{/if}} {{/.}}
+        
+        </div>
+    </div>
+</div>
