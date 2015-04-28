@@ -1,0 +1,358 @@
+<div class="benefits">
+    <div class="container">
+        <div class="row">
+            <div class="span12 align-center">
+                <h2>
+          Why OutSystems?
+        </h2>
+            </div>
+            <div class="span4 benefit">
+                <a href="/platform/madp/"><img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=benefits_devices&amp;v=20150428115606" /> <span class="h3">Develop once for all devices</span> <span class="desc">Leverage responsive design and hybrid architecture to create multi-device applications (including native capabilities) without extra effort. </span> <span class="link">Learn More &raquo;</span> </a>
+            </div>
+            <div class="span4 benefit bordered">
+                <a href="/platform/integrate-everything/"><img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=benefits_logos_fade&amp;v=20150428115606" style="
+%MOBILE%width: 80%;%/MOBILE%" /> <span class="h3">Integrate everything </span> <span class="desc">Easily connect to enterprise systems, cloud services and databases using open source connectors. </span> <span class="link">Learn More &raquo;</span> </a>
+            </div>
+            <div class="span4 benefit bordered">
+                <a href="/platform/iterate-rapidly/"><img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=benefits_bars&amp;v=20150428115606" /> <span class="h3">Rapid delivery and change</span> <span class="desc">Use powerful visual modeling to create and change your sophisticated apps with blazing speed. </span> <span class="link">Learn More &raquo;</span> </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="what-is-it">
+    <style type="text/css">
+    .btn-group>.btn:last-child {
+        -webkit-border-top-right-radius: 0px;
+        border-top-right-radius: 0px;
+        -webkit-border-bottom-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        -moz-border-radius-topright: 0px;
+        -moz-border-radius-bottomright: 0px;
+    }
+    
+    a.btn {
+        border-bottom: rgba(66, 66, 66, 0.12);
+    }
+    
+    a.btn.Next {
+        -webkit-border-top-right-radius: 10px !important;
+        -moz-border-radius-topright: 10px !important;
+        border-top-right-radius: 10px !important;
+    }
+    
+    a.btn.Previous {
+        -webkit-border-bottom-right-radius: 10px !important;
+        -moz-border-radius-bottomright: 10px !important;
+        border-bottom-right-radius: 10px !important;
+    }
+    
+    .parallax1 .option.create,
+    .parallax1 .option.deploy,
+    .parallax1 .option.change,
+    .parallax1 .option.manage,
+    .parallax1 .option.standards {
+        visibility: hidden;
+        display: none;
+    }
+    
+    .parallax1.create .option.create,
+    .parallax1.deploy .option.deploy,
+    .parallax1.change .option.change,
+    .parallax1.manage .option.manage,
+    .parallax1.standards .option.standards {
+        visibility: visible;
+        display: block;
+    }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".btn").removeClass("Next");
+        $(".btn").removeClass("Previous");
+        $($(".btn").get($(".btn").index($(".active")) + 1)).addClass("Next");
+        if ($(".btn").index($(".active")) - 1 >= 0) {
+            $($(".btn").get($(".btn").index($(".active")) - 1)).addClass("Previous");
+        }
+        $('.optionSelector a').click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if ((typeof wistiaEmbeds !== 'undefined')) {
+                for (var i = 0; i < wistiaEmbeds.length; i++) {
+                    wistiaEmbeds[i].pause();
+                }
+            }
+            var parallax = $(this).closest('.parallax');
+            var option = parallax.data('option') || 'create';
+            var newOption = $(this).data('option');
+            parallax.removeClass(option).addClass(newOption).data('option', newOption);
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+            $(".btn").removeClass("Next");
+            $(".btn").removeClass("Previous");
+            $($(".btn").get($(".btn").index($(".active")) + 1)).addClass("Next");
+            if ($(".btn").index($(".active")) - 1 >= 0) {
+                $($(".btn").get($(".btn").index($(".active")) - 1)).addClass("Previous");
+            }
+        });
+    });
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="span12 align-center">
+                <h2>
+          How Does OutSystems Platform Work?
+        </h2>
+            </div>
+            <div class="span12">
+                <div class="parallax parallax1 create">
+                    <div class="what-you-can-do">
+                        <div class="btn-group optionSelector">
+                            <a class="btn active" data-option="create" href="#"><span class="osicon-visual-dev iconlp-fontcolor">&nbsp;</span> <span class="h4">Develop Visually</span> </a>
+                            <a class="btn Next" data-option="deploy" href="#"> <span class="osicon-1-click-publish iconlp-fontcolor">&nbsp;</span> <span class="h4">Deploy Automatically</span> </a>
+                            <a class="btn" data-option="change" href="#"> <span class="osicon-change iconlp-fontcolor">&nbsp;</span> <span class="h4">Change Continuously</span> </a>
+                            <a class="btn" data-option="manage" href="#"> <span class="osicon-architecture iconlp-fontcolor">&nbsp;</span> <span class="h4">Manage Centrally</span> </a>
+                            <a class="btn" data-option="standards" href="#"> <span class="osicon-nolockin iconlp-fontcolor">&nbsp;</span> <span class="h4">No Lock-In</span> </a>
+                        </div>
+                        <div class="description">
+                            <div class="option create">
+                                <div class="content">
+                                    <iframe allowfullscreen="allowfullscreen" allowtransparency="true" class="wistia_embed" frameborder="0" height="379" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" name="wistia_embed" oallowfullscreen="oallowfullscreen" scrolling="no" src="http://fast.wistia.net/embed/iframe/67sdl1xgu9" webkitallowfullscreen="webkitallowfullscreen" width="668"></iframe>
+                                    <h4>
+                    Model all aspects of your applications visually, without any low-level coding
+                  </h4>
+                                </div>
+                            </div>
+                            <div class="option deploy">
+                                <div class="content">
+                                    <iframe allowfullscreen="allowfullscreen" allowtransparency="true" class="wistia_embed" frameborder="0" height="379" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" name="wistia_embed" oallowfullscreen="oallowfullscreen" scrolling="no" src="http://fast.wistia.net/embed/iframe/cylzp3c4b6?playerPreference=html5" webkitallowfullscreen="webkitallowfullscreen" width="668"></iframe>
+                                    <h4>
+                    Automatically deploy and stage your applications confidently with 1-click
+                  </h4>
+                                </div>
+                            </div>
+                            <div class="option change">
+                                <div class="content">
+                                    <iframe allowfullscreen="allowfullscreen" allowtransparency="true" class="wistia_embed" frameborder="0" height="379" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" name="wistia_embed" oallowfullscreen="oallowfullscreen" scrolling="no" src="http://fast.wistia.net/embed/iframe/kyfexwxc7w?playerPreference=html5" webkitallowfullscreen="webkitallowfullscreen" width="668"></iframe>
+                                    <h4>
+                    Change any aspect of your apps quickly and easily, redeploy in minutes
+                  </h4>
+                                </div>
+                            </div>
+                            <div class="option manage">
+                                <div class="content">
+                                    <iframe allowfullscreen="allowfullscreen" allowtransparency="true" class="wistia_embed" frameborder="0" height="379" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" name="wistia_embed" oallowfullscreen="oallowfullscreen" scrolling="no" src="http://fast.wistia.net/embed/iframe/n4a6wudc6t?playerPreference=html5" webkitallowfullscreen="webkitallowfullscreen" width="668"></iframe>
+                                    <h4>
+                    Manage performance and usage of all your applications from a centralized console
+                  </h4>
+                                </div>
+                            </div>
+                            <div class="option standards">
+                                <div class="content" style="
+padding: 0;
+padding-top: 20px;
+">
+                                    <table border="0" cellpadding="5" cellspacing="5" style="border-spacing: 0px;padding: 10px 10px 20px 10px;text-align: left;margin-bottom: 51px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="text-align: center;vertical-align: top">
+                                                    <div class="pdf_screenshot" id="wtDocImage">
+                                                        <img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=tech&amp;v=20150428115606" style="height: 237px;margin: 0 20px 0 20px;" />
+                                                    </div>
+                                                </td>
+                                                <td style="vertical-align: top;">
+                                                    <div>
+                                                        <h3 style="margin-top:0">
+                              Standard Application Without Lock-In
+                            </h3>
+                                                        <div style="text-align: left;">
+                                                            <h4>
+                                Platform generates standard Java or C# plus HTML5,
+                                <br />
+                                Javascript, CSS3 and SQL
+                              </h4>
+                                                            <h4>
+                                Standard code on standard stacks ensures no vendor lock-in,
+                                <br />
+                                no loss of IP
+                              </h4>
+                                                            <a class="popup_link" href="/it-resources/pdf/code-detach/">Learn more &raquo;</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="border-top: 1px solid #D3D3D3;padding: 25px 0;">
+                                        <h4 style="display: inline-block;margin-right: 50px;">
+                      <strong>Independent Analysis:</strong> QAT Global Code Review
+                    </h4>
+                                        <a alt="Try now for free" class="osbtn osbtn-red" href="/res/qat-report-outsystems-code" target="_blank" title="Download report">Download report </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="photo-quotes">
+    <div class="magiccontainer container m-carousel m-quotes m-fluid">
+        <div class="m-carousel-inner">
+            <div class="m-item m-active">
+                <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=quote-1&amp;v=20150428115606" />
+            </div>
+            <div class="m-item">
+                <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=quote-2&amp;v=20150428115606" />
+            </div>
+            <div class="m-item">
+                <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=quote-3&amp;v=20150428115606" />
+            </div>
+            <div class="m-item">
+                <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=quote-4&amp;v=20150428115606" />
+            </div>
+            <div class="m-item">
+                <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=quote-5&amp;v=20150428115606" />
+            </div>
+        </div>
+        <div class="pxs_navigation">
+            <span class="pxs_next"><img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=seta_direita_quotes&amp;v=20150428115606" /> </span> <span class="pxs_prev"> <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=seta_esquerda_quotes&amp;v=20150428115606" /> </span>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var mCarouselQuotes;
+
+    function updateCarouselQuotesControls() {
+        if (mCarouselQuotes.children('.m-carousel-inner').children(':last').hasClass('m-active')) {
+            mCarouselQuotes.find('.pxs_next').hide();
+        } else {
+            mCarouselQuotes.find('.pxs_next').show();
+        }
+        if (mCarouselQuotes.children('.m-carousel-inner').children(':first').hasClass('m-active')) {
+            mCarouselQuotes.find('.pxs_prev').hide();
+        } else {
+            mCarouselQuotes.find('.pxs_prev').show();
+        }
+    }
+    $(function() {
+        mCarouselQuotes = $('.m-carousel.m-quotes').carousel();
+        mCarouselQuotes.find('.pxs_prev').bind('click', function() {
+            $(".m-carousel.m-quotes .m-carousel-inner").animate({
+                opacity: 0
+            }, 500, function() {
+                mCarouselQuotes.carousel('prev');
+                $(".m-carousel.m-quotes .m-carousel-inner").animate({
+                    opacity: 1
+                }, 500);
+            });
+            updateCarouselQuotesControls();
+        });
+        mCarouselQuotes.find('.pxs_next').bind('click', function() {
+            $(".m-carousel.m-quotes .m-carousel-inner").animate({
+                opacity: 0
+            }, 500, function() {
+                mCarouselQuotes.carousel('next');
+                $(".m-carousel.m-quotes .m-carousel-inner").animate({
+                    opacity: 1
+                }, 500);
+            });
+            updateCarouselQuotesControls();
+        });
+        mCarouselQuotes.on('afterSlide', function() {
+            updateCarouselQuotesControls();
+        })
+        updateCarouselQuotesControls();
+    });
+    </script>
+</div>
+<div class="customers-and-experts">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                %MOBILE%
+                <h3 style="margin-bottom:20px">
+          Trusted by Global Companies
+        </h3> %/MOBILE% %WEB%
+                <h5>
+          Trusted by Global Companies
+        </h5> %/WEB%
+                <a href="/customers/">
+                    <!-- LOGOS START -->
+                    {{#feed}} {{entry.0.gsx$customerhtml.$t}} {{/feed}}
+                    <!-- LOGOS END -->
+                    <br />
+                    <br /> Find customers in your industry &raquo;</a>
+            </div>
+            <div class="span4">
+                %MOBILE%
+                <h3 style="margin-bottom:20px; margin-top:55px;">
+            Recognized by Analysts
+          </h3> %/MOBILE% %WEB%
+                <h5>
+            Recognized by Analysts
+          </h5> %/WEB% <a href="/company/analysts/"><span class="partner-matrix-entry" data-name="logo_gartner"><img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=gartner2&amp;v=20150428115606" /></span> <span class="partner-matrix-entry" data-name="logo_forrester"><img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=forrester8&amp;v=20150428115606" /></span> <span class="partner-matrix-entry" data-name="logo_ovum"><img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=ovum1&amp;v=20150428115606" /></span> <span class="partner-matrix-entry" data-name="logo_bloor"><img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=bloor&amp;v=20150428115606" /></span> <span class="partner-matrix-entry" data-name="logo_idc"><img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=idc&amp;v=20150428115606" /></span> <span class="partner-matrix-entry" data-name="logo_451"><img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=451&amp;v=20150428115606" /></span>
+          <br />
+          <br />
+          See what experts say &raquo; </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="how-can-we-help">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="needs">
+                    <div class="container" style="padding-bottom: 63px;">
+                        <h2>
+                How Do We Help?
+              </h2>
+                        <div class="row">
+                            <div class="span3 need">
+                                <a href="/apps/"><span class="h5">Business Manager</span> <span class="desc">Looking for an app to solve an immediate business problem? Not finding anything that quite fits your specific needs?</span> <span class="cta">See custom apps &raquo;</span> </a>
+                            </div>
+                            <div class="span3 need">
+                                <a href="/case-studies/"><span class="h5">IT Manager</span> <span class="desc">Looking for a way to handle the deluge of incoming app requests?
+                    <br />
+                    What about mobile?</span> <span class="cta">See case studies &raquo;</span> </a>
+                            </div>
+                            <div class="span3 need">
+                                <a href="/platform/" target="_blank"><span class="h5">IT Architect</span> <span class="desc">Looking for a strategic application platform that automatically enforces architectural best practices while increasing productivity?</span> <span class="cta">See how it works &raquo;</span> </a>
+                            </div>
+                            <div class="span3 need">
+                                <a href="/get-started/"><span class="h5">Developer</span> <span class="desc">Looking for a more efficient way to create apps? Tired of all the small things that get in the way of just developing?</span> <span class="cta">Get started &raquo;</span> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="border-top: 1px solid lightgrey;padding-top: 50px;">
+                        <div class="needs_row">
+                            <div class="row">
+                                <div class="span12">
+                                    <h5 style="font-size: 30px;margin-bottom: 40px;">
+                      How Can You Start?
+                    </h5>
+                                </div>
+                                <div class="span5 top50" style="text-align: left;">
+                                    <h3 style="font-size: 18px;margin-bottom: 6px;">
+                      Kick-start with pre-built&nbsp;apps
+                    </h3>
+                                    <p style="line-height: 24px;">
+                                        Easy to change with OutSystems Platform
+                                        <br /> Add your own specs and functionality in days
+                                        <br /> Existing systems plug directly in
+                                    </p>
+                                    <a class="cta" href="/apps/" title="See all pre-built apps">See all pre-built apps &raquo;</a>
+                                </div>
+                                <div class="span7">
+                                    <p>
+                                        <img alt="OutSystems Pre-Built Apps" src="http://www.outsystems.com/CMS_BackOffice/ResourceLink.aspx?ResourceName=Product-mobile-apps-icons&amp;v=20150428115606" style="width: 100%;" />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
