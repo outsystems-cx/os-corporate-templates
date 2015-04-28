@@ -278,7 +278,27 @@ padding-top: 20px;
         </h5> %/WEB%
                 <a href="/customers/">
                     <!-- LOGOS START -->
-                    {{#feed}} {{entry.0.gsx$customerhtml.$t}} {{/feed}}
+                    {{#feed}} 
+  {{#entry}}
+    {{comment}}
+<span class="customer-matrix-entry" 
+            data-ae="{{gsx$uaeaw.$t}}" 
+      data-au="{{gsx$au.$t}}" 
+      data-br="{{gsx$br.$t}}" 
+      data-fi="{{gsx$fi.$t}}" 
+      data-global="{{gsx$global.$t}}" 
+      data-jp="{{gsx$jp.$t}}" 
+      data-name="{{gsx$id.$t}}" 
+      data-nl="{{gsx$nl.$t}}" 
+      data-pt="{{gsx$pt.$t}}" 
+      data-sg="{{gsx$sg.$t}}" 
+      data-uk="{{gsx$uk.$t}}" 
+      data-us="{{gsx$us.$t}}" 
+      data-za="{{gsx$za.$t}}">
+    <img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName={{gsx$id.$t}}"/>
+</span>
+  {{/entry}}
+{{/feed}}
                     <!-- LOGOS END -->
                     <br />
                     <br /> Find customers in your industry &raquo;</a>
