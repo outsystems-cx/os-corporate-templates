@@ -280,7 +280,6 @@ padding-top: 20px;
                     <!-- LOGOS START -->
                     {{#feed}} 
   {{#entry}}
-    {{comment}}
 <span class="customer-matrix-entry" 
             data-ae="{{gsx$ae.$t}}" 
       data-au="{{gsx$au.$t}}" 
