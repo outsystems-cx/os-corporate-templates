@@ -23,7 +23,7 @@
 
 {{#feed}} 
   {{#entry}}
-  {{#gsx$companydescription.$t}} 
+
 <div class="span6">
   <div class="Partner">
     <div style=" padding: 25px;">
@@ -46,7 +46,7 @@
     </div>
   </div>
 </div>
-{{/gsx$companydescription.$t}}
+
   {{/entry}}
 {{/feed}}
 
