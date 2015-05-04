@@ -67,27 +67,7 @@
 <script type="text/javascript">
 var mCarouselQuotes;
 
-function updateCarouselQuotesControls() {
-    if (mCarouselQuotes.children('.m-carousel-inner').children(':last').hasClass('m-active')) {
-        mCarouselQuotes.find('.pxs_next').hide();
-    } else {
-        mCarouselQuotes.find('.pxs_next').show();
-    }
-    if (mCarouselQuotes.children('.m-carousel-inner').children(':first').hasClass('m-active')) {
-        mCarouselQuotes.find('.pxs_prev').hide();
-    } else {
-        mCarouselQuotes.find('.pxs_prev').show();
-    }
-}
-$(function() {
-
-    //wrap - pagination
-    var logoBoxes = $('.m-carousel-inner > .span6');
-
-    for (var i = 0; i < logoBoxes.length; i += 8) {
-        logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"></div></div>');
-    }
-
+function mCarouselInit(){
 
     mCarouselQuotes = $('.m-carousel.m-quotes').carousel();
     mCarouselQuotes.find('.pxs_prev').bind('click', function() {
@@ -116,6 +96,32 @@ $(function() {
         updateCarouselQuotesControls();
     })
     updateCarouselQuotesControls();
+}
+
+
+function updateCarouselQuotesControls() {
+    if (mCarouselQuotes.children('.m-carousel-inner').children(':last').hasClass('m-active')) {
+        mCarouselQuotes.find('.pxs_next').hide();
+    } else {
+        mCarouselQuotes.find('.pxs_next').show();
+    }
+    if (mCarouselQuotes.children('.m-carousel-inner').children(':first').hasClass('m-active')) {
+        mCarouselQuotes.find('.pxs_prev').hide();
+    } else {
+        mCarouselQuotes.find('.pxs_prev').show();
+    }
+}
+$(function() {
+
+    //wrap - pagination
+    var logoBoxes = $('.m-carousel-inner > .span6');
+
+    for (var i = 0; i < logoBoxes.length; i += 8) {
+        logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"></div></div>');
+    }
+
+mCarouselInit();
+
 });
 </script>
 <script>
