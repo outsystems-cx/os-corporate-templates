@@ -43,7 +43,6 @@
           <a class="popup_link" href="/partners/contact-partner?ContactedPartner={{gsx$partnername.$t}}">Contact Partner</a>
         </div>
       </div>
-      <!-- end-text-and-link -->
     </div>
   </div>
 </div>
