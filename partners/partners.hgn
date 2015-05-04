@@ -28,7 +28,7 @@
     <div style=" padding: 25px;">
       <div class="PartnerImage">
         <a href="{{gsx$url.$t}}" target="_blank">
-            <img alt="{{gsx$partnername.$t}}" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName={{gsx$logoname.$t}}"/>
+            <img alt="{{gsx$partnername.$t}}" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=WB"/>
         </a>
       </div>
       <div class="PartnersInfo">
