@@ -3,66 +3,99 @@
         <div class="span1">
             &nbsp;
         </div>
+
         <div class="PartnerPageSubtitle span10">
             %MOBILE%
-            <div style="color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
-                Our Partner Network
-            </div>
-            %/MOBILE%
-            <p>
-                OutSystems is proud to partner with innovative and leading companies. Our partners use OutSystems Platform to deliver enterprise-grade custom mobile and web applications to companies across the globe.
-            </p>
+
+            <div style=
+            "color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
+            Our Partner Network
+            </div>%/MOBILE%
+
+            <p>OutSystems is proud to partner with innovative and leading
+            companies. Our partners use OutSystems Platform to deliver
+            enterprise-grade custom mobile and web applications to companies
+            across the globe.</p>
         </div>
+
         <div class="span1">
             &nbsp;
         </div>
+
         <div class="span12">
-            <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
-                <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
+            <div class=
+            "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
+                <div class="m-carousel-inner" style=
+                "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
+                {{#feed}} {{#entry}}
 
-{{#feed}} 
-  {{#entry}}
+                    <div class="span6">
+                        <div class="Partner">
+                            <div style=" padding: 25px;">
+                                <div class="PartnerImage">
+                                    <a href="{{gsx$url.$t}}" target=
+                                    "_blank"><img alt="{{gsx$partnername.$t}}"
+                                    src=
+                                    "/CMS_BackOffice/ResourceLink.aspx?ResourceName=WB"></a>
+                                </div>
 
-<div class="span6">
-  <div class="Partner">
-    <div style=" padding: 25px;">
-      <div class="PartnerImage">
-        <a href="{{gsx$url.$t}}" target="_blank">
-            <img alt="{{gsx$partnername.$t}}" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=WB"/>
-        </a>
-      </div>
-      <div class="PartnersInfo">
-        <p>
-          {{gsx$companydescription.$t}}
-        </p>
-        <div class="SeeMore">
-          <a href="{{gsx$url.$t}}" target="_blank">See More</a>
+                                <div class="PartnersInfo">
+                                    <p>{{gsx$companydescription.$t}}</p>
+
+                                    <div class="SeeMore">
+                                        <a href="{{gsx$url.$t}}" target=
+                                        "_blank">See More</a>
+                                    </div>
+
+                                    <div class="SeeMore">
+                                        <a class="popup_link" href=
+                                        "/partners/contact-partner?ContactedPartner={{gsx$partnername.$t}}">
+                                        Contact Partner</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>{{/entry}} {{/feed}}
+                </div>
+
+                <div class="row">
+                    <div class=
+                    "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
+                    style=" display: inline-block;">
+                        <a class="pxs_prev" data-slide="prev" href="#" onclick=
+                        "$('html, body').animate({ scrollTop:450 }, 1000);">Previous</a>
+                        %WEB% <a class="m-active" data-slide="1" href="#"
+                        onclick=
+                        "$('html, body').animate({ scrollTop:450 }, 1000);">1</a>
+                        <a data-slide="2" href="#" onclick=
+                        "$('html, body').animate({ scrollTop:450 }, 1000);">2</a>
+                        <a data-slide="3" href="#" onclick=
+                        "$('html, body').animate({ scrollTop:450 }, 1000);">3</a>
+                        <a data-slide="4" href="#" onclick=
+                        "$('html, body').animate({ scrollTop:450 }, 1000);">4</a>
+                        <a data-slide="5" href="#" onclick=
+                        "$('html, body').animate({ scrollTop:450 }, 1000);">5</a>
+                        %/WEB% <a class="pxs_next" data-slide="next" href="#"
+                        onclick=
+                        "$('html, body').animate({ scrollTop:450 }, 1000);">Next</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class=
+            "container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center"
+            style=
+            " display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
+            %WEB%Ready to take advantage of our program?%/WEB% <a class=
+            "osbtn osbtn-red" data-name="Become Partner" data-option=""
+                href="/partners/become-a-partner/" id=
+                "wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=
+                " margin-left: 70px;"><span class="try-now">Become a
+                partner</span></a>
+            </div>
         </div>
-        <div class="SeeMore">
-          <a class="popup_link" href="/partners/contact-partner?ContactedPartner={{gsx$partnername.$t}}">Contact Partner</a>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-
-  {{/entry}}
-{{/feed}}
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="span12 m-carousel-controls m-carousel-pagination PartnersPagination" style=" display: inline-block;">
-          <a class="pxs_prev" data-slide="prev" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">Previous</a> %WEB% <a class="m-active" data-slide="1" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">1</a> <a data-slide="2" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">2</a> <a data-slide="3" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">3</a> <a data-slide="4" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">4</a> <a data-slide="5" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">5</a> %/WEB% <a class="pxs_next" data-slide="next" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">Next</a>
-        </div>
-      </div>
-    </div>
-    <div class="container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=" display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
-      %WEB%Ready to take advantage of our program?%/WEB% <a class="osbtn osbtn-red" data-name="Become Partner" data-option="" href="/partners/become-a-partner/" id="wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=" margin-left: 70px;"><span class="try-now">Become a partner</span></a>
-    </div>
-  </div>
-</div>
-<script type="text/javascript">
+</div><script type="text/javascript">
 var mCarouselQuotes;
 function updateCarouselQuotesControls() {
     if (mCarouselQuotes.children('.m-carousel-inner').children(':last').hasClass('m-active')) {
@@ -81,13 +114,13 @@ $(function() {
     var logoBoxes = $('.m-carousel-inner > .span6');
     for (var i = 0; i < logoBoxes.length; i += 8) {
         if (i==0) {
-            logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"></div></div>');
+            logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
         }else{
-            logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"></div></div>');
+            logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
         }
     }
 
-    
+
     mCarouselQuotes = $('.m-carousel.m-quotes').carousel();
     mCarouselQuotes.find('.pxs_prev').bind('click', function() {
         $(".m-carousel.m-quotes .m-carousel-inner").animate({
@@ -116,8 +149,7 @@ $(function() {
     })
     updateCarouselQuotesControls();
 });
-</script>
-<script>
+</script> <script>
 $(document).ready(function() {
     var size = 250;
     var p = $('.PartnersInfo p');
