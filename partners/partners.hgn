@@ -117,7 +117,12 @@ $(function() {
     var logoBoxes = $('.m-carousel-inner > .span6');
 
     for (var i = 0; i < logoBoxes.length; i += 8) {
-        logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"></div></div>');
+        if (i==0) {
+            logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"></div></div>');
+        }else{
+            logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"></div></div>');
+        }
+        
     }
 
 //mCarouselInit();
