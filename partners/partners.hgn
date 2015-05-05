@@ -31,34 +31,34 @@
 
 {{#feed}} 
   {{#entry}}
-
-
-<div class="span6">
-  <div class="Partner">
-    <div style=" padding: 25px;">
-      <div class="PartnerImage">
-        <a href="{{gsx$url.$t}}" target="_blank">
-            <img alt="{{gsx$partnername.$t}}" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=WB"/>
+  {{#if gsx$companydescription.$t}}
+<div class=""span6"">
+  <div class=""Partner"">
+    <div style="" padding: 25px;"">
+      <div class=""PartnerImage"">
+        <a href=""{{gsx$url.$t}}"" target=""_blank"">
+            <img alt=""{{gsx$partnername.$t}}"" src=""/CMS_BackOffice/ResourceLink.aspx?ResourceName=WB""/>
         </a>
       </div>
-      <div class="PartnersInfo">
+      <div class=""PartnersInfo"">
         <p>
           {{gsx$companydescription.$t}}
         </p>
-        <div class="SeeMore">
-          <a href="{{gsx$url.$t}}" target="_blank">See More</a>
+        <div class=""SeeMore"">
+          <a href=""{{gsx$url.$t}}"" target=""_blank"">See More</a>
         </div>
-        <div class="SeeMore">
-          <a class="popup_link" href="/partners/contact-partner?ContactedPartner={{gsx$partnername.$t}}">Contact Partner</a>
+        <div class=""SeeMore"">
+          <a class=""popup_link"" href=""/partners/contact-partner?ContactedPartner={{gsx$partnername.$t}}"">Contact Partner</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
+  {{/if}}
   {{/entry}}
 {{/feed}}
+
+
 
 
                 </div>
