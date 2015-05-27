@@ -20,48 +20,47 @@
       <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
         <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"><!--page1-->
           
-
-
-{{#partners}} 
-<div class="span6">
-  <div class="Partner">
-    <div style=" padding: 25px;">
-      <div class="PartnerImage">
-        <a href="{{Website}}" target="_blank">
-            <img alt="{{Name}}" 
-            src="{{LogoLink}}"/>
-        </a>
-      </div>
-      <div class="PartnersInfo">
-        <p>
-          {{Description}}
-        </p>
-        <div class="SeeMore">
-          <a href="{{Website}}" target="_blank">See More</a>
-        </div>
-        <div class="SeeMore">
-          <a class="popup_link" href="/partners/contact-partner?ContactedPartner={{Name}}">Contact Partner</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{/partners}}
-
-
-
-
+                {{#partners}} 
+                <div class="span6">
+                  <div class="Partner">
+                    <div style=" padding: 25px;">
+                      <div class="PartnerImage">
+                        <a href="{{Website}}" target="_blank">
+                            <img alt="{{Name}}" 
+                            src="{{LogoLink}}"/>
+                        </a>
+                      </div>
+                      <div class="PartnersInfo">
+                        <p>
+                          {{Description}}
+                        </p>
+                        <div class="SeeMore">
+                          <a href="{{Website}}" target="_blank">See More</a>
+                        </div>
+                        <div class="SeeMore">
+                          <a class="popup_link" href="/partners/contact-partner?ContactedPartner={{Name}}">Contact Partner</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{/partners}}
 
           </div>
         </div>
+
+
+
         <div class="row">
+
+
           <div class="span12 m-carousel-controls m-carousel-pagination PartnersPagination" style=" display: inline-block;">
-            <a class="pxs_prev" data-slide="prev" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);" style="
-background: none;
-">Previous</a> %WEB% <a class="m-active" data-slide="1" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000)">1</a> <a data-slide="2" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">2</a> <a data-slide="3" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">3</a> <a data-slide="4" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">4</a> <a data-slide="5" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">5</a> %/WEB% <a class="pxs_next" data-slide="next" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);" style="
-background: none;
-">Next</a>
+
+            
+
           </div>
+
+
         </div>
       </div>
       <div class="container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=" display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
@@ -130,15 +129,28 @@ $(function() {
 $(document).ready(function() {
 
     //wrap - pagination
+    var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
+
+    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a> %WEB% ';
+    var pag = 1;
+
     var logoBoxes = $('.m-carousel-inner > .span6');
     for (var i = 0; i < logoBoxes.length; i += 8) {
-        if (i==0) {
+        if (i == 0) {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
-        }else{
+            paginationHTML += '<a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a>';
+
+        } else {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
+            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a>';
         }
+
+        pag++;
     }
 
+    paginationHTML += '<a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a>';
+    
+    paginationWrapper.append(paginationHTML);
 
 
 
@@ -155,4 +167,5 @@ $(document).ready(function() {
         }
     });
 });
+
 </script>
