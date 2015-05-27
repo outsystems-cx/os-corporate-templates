@@ -1,106 +1,76 @@
 <div class="container">
-    <div class="row" style="padding: 7px 0px 1px; float: left;">
-        <div class="span1">
-            &nbsp;
-        </div>
-
-        <div class="PartnerPageSubtitle span10">
-            %MOBILE%
-
-            <div style=
-            "color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
-            Our Partner Network
-            </div>%/MOBILE%
-
-            <p>OutSystems is proud to partner with innovative and leading
-            companies. Our partners use OutSystems Platform to deliver
-            enterprise-grade custom mobile and web applications to companies
-            across the globe.</p>
-        </div>
-
-        <div class="span1">
-            &nbsp;
-        </div>
-
-        <div class="span12">
-            <div class=
-            "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
-                <div class="m-carousel-inner" style=
-                "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
+  <div class="row" style="padding: 7px 0px 1px; float: left;">
+    <div class="span1">
+      &nbsp;
+    </div>
+    <div class="PartnerPageSubtitle span10">
+      %MOBILE%
+      <div style="color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
+        Our Partner Network
+      </div>
+      %/MOBILE%
+      <p>
+        OutSystems is proud to partner with innovative and leading companies. Our partners use OutSystems Platform to deliver enterprise-grade custom mobile and web applications to companies across the globe.
+      </p>
+    </div>
+    <div class="span1">
+      &nbsp;
+    </div>
+    <div class="span12">
+      <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
+        <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"><!--page1-->
+          
 
 
-{{#feed}} 
-  {{#entry}}
-  {{#if gsx$companydescription.$t}}
-<div class=""span6"">
-  <div class=""Partner"">
-    <div style="" padding: 25px;"">
-      <div class=""PartnerImage"">
-        <a href=""{{gsx$url.$t}}"" target=""_blank"">
-            <img alt=""{{gsx$partnername.$t}}"" src=""/CMS_BackOffice/ResourceLink.aspx?ResourceName=WB""/>
+{{#partners}} 
+<div class="span6">
+  <div class="Partner">
+    <div style=" padding: 25px;">
+      <div class="PartnerImage">
+        <a href="{{Website}}" target="_blank">
+            <img alt="{{Name}}" 
+            src="{{LogoLink}}"/>
         </a>
       </div>
-      <div class=""PartnersInfo"">
+      <div class="PartnersInfo">
         <p>
-          {{gsx$companydescription.$t}}
+          {{Description}}
         </p>
-        <div class=""SeeMore"">
-          <a href=""{{gsx$url.$t}}"" target=""_blank"">See More</a>
+        <div class="SeeMore">
+          <a href="{{Website}}" target="_blank">See More</a>
         </div>
-        <div class=""SeeMore"">
-          <a class=""popup_link"" href=""/partners/contact-partner?ContactedPartner={{gsx$partnername.$t}}"">Contact Partner</a>
+        <div class="SeeMore">
+          <a class="popup_link" href="/partners/contact-partner?ContactedPartner={{Name}}">Contact Partner</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-  {{/if}}
-  {{/entry}}
-{{/feed}}
+{{/partners}}
 
 
 
 
-                </div>
 
-                <div class="row">
-                    <div class=
-                    "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
-                    style=" display: inline-block;">
-                        <a class="pxs_prev" data-slide="prev" href="#" onclick=
-                        "$('html, body').animate({ scrollTop:450 }, 1000);">Previous</a>
-                        %WEB% <a class="m-active" data-slide="1" href="#"
-                        onclick=
-                        "$('html, body').animate({ scrollTop:450 }, 1000);">1</a>
-                        <a data-slide="2" href="#" onclick=
-                        "$('html, body').animate({ scrollTop:450 }, 1000);">2</a>
-                        <a data-slide="3" href="#" onclick=
-                        "$('html, body').animate({ scrollTop:450 }, 1000);">3</a>
-                        <a data-slide="4" href="#" onclick=
-                        "$('html, body').animate({ scrollTop:450 }, 1000);">4</a>
-                        <a data-slide="5" href="#" onclick=
-                        "$('html, body').animate({ scrollTop:450 }, 1000);">5</a>
-                        %/WEB% <a class="pxs_next" data-slide="next" href="#"
-                        onclick=
-                        "$('html, body').animate({ scrollTop:450 }, 1000);">Next</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class=
-            "container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center"
-            style=
-            " display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
-            %WEB%Ready to take advantage of our program?%/WEB% <a class=
-            "osbtn osbtn-red" data-name="Become Partner" data-option=""
-                href="/partners/become-a-partner/" id=
-                "wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=
-                " margin-left: 70px;"><span class="try-now">Become a
-                partner</span></a>
-            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="span12 m-carousel-controls m-carousel-pagination PartnersPagination" style=" display: inline-block;">
+            <a class="pxs_prev" data-slide="prev" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);" style="
+background: none;
+">Previous</a> %WEB% <a class="m-active" data-slide="1" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000)">1</a> <a data-slide="2" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">2</a> <a data-slide="3" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">3</a> <a data-slide="4" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">4</a> <a data-slide="5" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);">5</a> %/WEB% <a class="pxs_next" data-slide="next" href="#" onclick="$('html, body').animate({ scrollTop:450 }, 1000);" style="
+background: none;
+">Next</a>
+          </div>
+        </div>
+      </div>
+      <div class="container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=" display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
+        %WEB%Ready to take advantage of our program?%/WEB% <a class="osbtn osbtn-red" data-name="Become Partner" data-option="" href="/partners/become-a-partner/" id="wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=" margin-left: 70px;"><span class="try-now">Become a partner</span></a>
+      </div>
     </div>
-</div><script type="text/javascript">
+  </div>
+</div>
+<script type="text/javascript">
 var mCarouselQuotes;
 function updateCarouselQuotesControls() {
     if (mCarouselQuotes.children('.m-carousel-inner').children(':last').hasClass('m-active')) {
@@ -113,8 +83,52 @@ function updateCarouselQuotesControls() {
     } else {
         mCarouselQuotes.find('.pxs_prev').show();
     }
+    mCarouselQuotes.carousel('unbind');
 }
 $(function() {
+    var totalslides = $('.m-carousel-inner').children().length;
+    mCarouselQuotes = $('.m-carousel.m-quotes').carousel();
+    mCarouselQuotes.find('.pxs_prev').bind('click', function() {
+        if(mCarouselQuotes.children('.m-carousel-inner').children(':nth-child(2)').hasClass('m-active')){
+          mCarouselQuotes.find('.pxs_prev').hide();
+          mCarouselQuotes.find('.pxs_next').show();
+        }
+        else{
+          mCarouselQuotes.find('.pxs_next').show();
+          mCarouselQuotes.find('.pxs_prev').show();
+        }
+    });
+    mCarouselQuotes.find('.pxs_next').bind('click', function() {
+        if(mCarouselQuotes.children('.m-carousel-inner').children(':nth-child('+ (totalslides-1) +')').hasClass('m-active')){
+          mCarouselQuotes.find('.pxs_next').hide();
+          mCarouselQuotes.find('.pxs_prev').show();
+        }
+        else{
+          mCarouselQuotes.find('.pxs_next').show();
+          mCarouselQuotes.find('.pxs_prev').show();
+        }
+    });
+    $('.m-carousel-controls.m-carousel-pagination>a:not(.m-carousel-controls.m-carousel-pagination>a.pxs_prev):not(.m-carousel-controls.m-carousel-pagination>a.pxs_next)').each(function(){
+      $(this).bind('click', function(){
+        if( $(this)[0] == $('.m-carousel-controls.m-carousel-pagination>a[data-slide=' + totalslides + ']')[0] ){
+          mCarouselQuotes.find('.pxs_next').hide();
+          mCarouselQuotes.find('.pxs_prev').show();
+        }
+        else if( $(this)[0] == $('.m-carousel-controls.m-carousel-pagination>a[data-slide=1]')[0]){
+          mCarouselQuotes.find('.pxs_prev').hide();
+          mCarouselQuotes.find('.pxs_next').show();
+        }
+        else{
+          mCarouselQuotes.find('.pxs_next').show();
+          mCarouselQuotes.find('.pxs_prev').show();
+        }
+      });
+    });
+});
+</script>
+<script>
+$(document).ready(function() {
+
     //wrap - pagination
     var logoBoxes = $('.m-carousel-inner > .span6');
     for (var i = 0; i < logoBoxes.length; i += 8) {
@@ -126,46 +140,19 @@ $(function() {
     }
 
 
-    mCarouselQuotes = $('.m-carousel.m-quotes').carousel();
-    mCarouselQuotes.find('.pxs_prev').bind('click', function() {
-        $(".m-carousel.m-quotes .m-carousel-inner").animate({
-            opacity: 0
-        }, 500, function() {
-            mCarouselQuotes.carousel('prev');
-            $(".m-carousel.m-quotes .m-carousel-inner").animate({
-                opacity: 1
-            }, 500);
-        });
-        updateCarouselQuotesControls();
-    });
-    mCarouselQuotes.find('.pxs_next').bind('click', function() {
-        $(".m-carousel.m-quotes .m-carousel-inner").animate({
-            opacity: 0
-        }, 500, function() {
-            mCarouselQuotes.carousel('next');
-            $(".m-carousel.m-quotes .m-carousel-inner").animate({
-                opacity: 1
-            }, 500);
-        });
-        updateCarouselQuotesControls();
-    });
-    mCarouselQuotes.on('afterSlide', function() {
-        updateCarouselQuotesControls();
-    })
+
+
     updateCarouselQuotesControls();
-});
-</script> <script>
-$(document).ready(function() {
     var size = 250;
     var p = $('.PartnersInfo p');
     p.each(function(index, el) {
         textDefault = $.trim($(el).text());
         if (textDefault.length > size) {
             $(el).attr('title', textDefault);
+            $(el).succinct({
+                size: size
+            });
         }
-    });
-    p.succinct({
-        size: size
     });
 });
 </script>
