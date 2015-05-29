@@ -38,7 +38,7 @@
                           <a href="{{Website}}" target="_blank">See More</a>
                         </div>
                         <div class="SeeMore">
-                          <a class="popup_link" href="/partners/contact-partner?ContactedPartner={{Name}}">Contact Partner</a>
+                          <a class="popup_link" href="/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">Contact Partner</a>
                         </div>
                       </div>
                     </div>
