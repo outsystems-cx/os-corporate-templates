@@ -120,7 +120,7 @@ $(document).ready(function() {
     //wrap - pagination
     var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
 
-    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a>  ';
+    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a>  %WEB%';
     var pag = 1;
 
     var logoBoxes = $('.m-carousel-inner > .span6');
@@ -137,12 +137,12 @@ $(document).ready(function() {
         pag++;
     }
 
-    paginationHTML += '<a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a> ';   
+    paginationHTML += '%/WEB% <a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a> ';   
     paginationWrapper.append(paginationHTML);
     updateCarouselQuotesControls();
     var size = 250;
     var p = $('.PartnersInfo p');
-    p.each(function(index, el) {Partner Portal - Management & Implementation
+    p.each(function(index, el) 
         textDefault = $.trim($(el).text());
         if (textDefault.length > size) {
             $(el).attr('title', textDefault);
