@@ -120,7 +120,7 @@ $(document).ready(function() {
     //wrap - pagination
     var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
 
-    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a> %WEB% ';
+    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a>  ';
     var pag = 1;
 
     var logoBoxes = $('.m-carousel-inner > .span6');
@@ -137,7 +137,7 @@ $(document).ready(function() {
         pag++;
     }
 
-    paginationHTML += '%/WEB%<a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a> ';   
+    paginationHTML += '<a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a> ';   
     paginationWrapper.append(paginationHTML);
     updateCarouselQuotesControls();
     var size = 250;
