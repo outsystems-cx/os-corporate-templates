@@ -131,24 +131,24 @@ $(document).ready(function() {
     //wrap - pagination
     var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
 
-    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a> %WEB% ';
+    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a> ';
     var pag = 1;
 
     var logoBoxes = $('.m-carousel-inner > .span6');
     for (var i = 0; i < logoBoxes.length; i += 8) {
         if (i == 0) {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
-            paginationHTML += '<a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a>';
+            paginationHTML += ' %WEB% <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a>';
 
         } else {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
-            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a>';
+            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a> %/WEB% ';
         }
 
         pag++;
     }
 
-    paginationHTML += '%/WEB% <a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a>';
+    paginationHTML += ' <a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a>';
     
     paginationWrapper.append(paginationHTML);
 
