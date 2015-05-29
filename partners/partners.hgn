@@ -142,7 +142,7 @@ $(document).ready(function() {
     updateCarouselQuotesControls();
     var size = 250;
     var p = $('.PartnersInfo p');
-    p.each(function(index, el) 
+    p.each(function(index, el) {
         textDefault = $.trim($(el).text());
         if (textDefault.length > size) {
             $(el).attr('title', textDefault);
