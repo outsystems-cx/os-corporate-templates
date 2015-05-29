@@ -30,7 +30,7 @@
                             src="{{LogoLink}}"/>
                         </a>
                       </div>
-                      <div class="PartnersInfo">
+                      <div class="PartnersInfo" style="%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
                         <p>
                           {{Description}}
                         </p>
