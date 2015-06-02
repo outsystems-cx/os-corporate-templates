@@ -294,7 +294,8 @@ padding-top: 20px;
       data-uk="{{gsx$uk.$t}}" 
       data-us="{{gsx$us.$t}}" 
       data-za="{{gsx$za.$t}}">
-    <img alt="" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName={{gsx$id.$t}}"/>
+    <img alt=""  src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=loader" 
+                 data-src="/CMS_BackOffice/ResourceLink.aspx?ResourceName={{gsx$id.$t}}"  />
 </span>
   {{/entry}}
 {{/feed}}
