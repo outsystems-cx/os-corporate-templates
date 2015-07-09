@@ -1,1 +1,31 @@
-single
+{{#.}}
+<div class="container">
+  <div class="row">
+    <div class="span12" style="%WEB% margin-top: -20px; %/WEB% %MOBILE% margin-left: 10px; %/MOBILE% margin-bottom: 30px;">
+      <a href="/company/careers/">Back to Careers Page</a>
+    </div>
+    <div class="span8" style="margin-bottom: 60px;">
+      <div style="%WEB% margin-right: 50px; %/WEB% %MOBILE% margin-left: 10px; margin-right: 10px;%/MOBILE%">
+        <h1>
+           {{JobTitle}}
+        </h1>
+        <h3>
+          {{SmallDescription}}
+        </h3>
+
+{{JobPostText}}
+
+
+        <div style="padding-top:40px;">
+          <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=careers-email&amp;v=20150701163815" style="margin-top:15px;margin-bottom: 15px;display: block;" />
+          <a class="osbtn osbtn-blue" href="mailto:careers@outsystems.com?subject={{JobTitle}}&amp;body=(Attach%20your%20CV%20including%20your%20portfolio">Send us your CV and portfolio</a>
+        </div>
+        <div style="margin-top:50px;">
+          <a href="/company/careers/">Back to Careers Page</a>
+        </div>
+      </div>
+    </div>
+    %POST-SIDEBAR%
+  </div>
+</div>
+{{/.}}
