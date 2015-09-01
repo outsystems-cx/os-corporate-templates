@@ -1,0 +1,70 @@
+<style type="text/css">
+    .main-quote-background:after {
+        content: url("/CMS_BackOffice/ResourceLink.aspx?ResourceName=quote-main-arrow-bottom&v=20150306042418");
+        left: -5px;
+        position: relative;
+        top: -0px;
+        z-index: 100000;
+    }
+</style>
+<!--START highlights SECTION-->
+<div class="container">
+    <div class="row">
+        <div class="span8">
+            <h4>
+                {{Details.NewsTitle}}
+            </h4>
+            <h5>
+                {{Details.NewsSubTitle}}
+            </h5>
+            <div style="width: 100%; border-top: 1px solid silver;height:1px;">
+                &nbsp;
+            </div>
+            <p class="byline">
+                {{Details.LocationAndDate}}
+            </p>
+        </div>
+        %WEB%
+        <div class="span4">
+            &lt;%SOCIALS%&gt;
+        </div>
+        %/WEB%
+    </div>
+    <!--END highlights SECTION--><!--START highlights SECTION-->
+    <div class="container">
+        <div class="row top30">
+            <div class="span8">
+               {{Details.NewsPostText}}
+            </div>
+            <div class="span4" style="text-align: center;">
+                <a href="http://www.mercyships.org/" target="_blank"><img alt="Mercy Ships" src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=Mercy_ships_logo1&amp;v=20150306042418" style="width: 200px; height: 145px;" /></a>
+            </div>
+            <div class="span4 top20">
+                <div class="sidebar-quote-background">
+                    <p style="padding-top:5px;">
+                        &quot;An off-the-shelf packaged application just wasn&rsquo;t out there to deliver what we needed. OutSystems helped us immediately build a solution for our problem and it set us up to tackle future challenges.&quot;
+                    </p>
+                </div>
+                <p class="byline">
+                    <em>Cory Creamer, Mercy Ships Business Analyst</em>
+                </p>
+            </div>
+            <div class="span4 top20">
+                <div class="sidebar-quote-background">
+                    <p style="padding-top:5px;">
+                        &quot;We&rsquo;re extremely pleased to partner with Mercy Ships in bringing world-class healthcare to people in desperate need of these vital services. OutSystems is committed to helping organizations rapidly create, deploy and manage enterprise mobile and web applications to further their business goals and keep pace with end-users rapidly changing needs.&quot;
+                    </p>
+                </div>
+                <p class="byline">
+                    <em>Paulo Rosado, CEO of OutSystems</em>
+                </p>
+            </div>
+            %MOBILE%
+            <div class="span4" style="width:320px; margin-left:-60px;">
+                &lt;%SOCIALS%&gt;
+            </div>
+            %/MOBILE%
+        </div>
+    </div>
+    <!--END highlights SECTION-->
+</div>
