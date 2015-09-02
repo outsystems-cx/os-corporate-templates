@@ -1,3 +1,4 @@
+{{#.}}
 <style type="text/css">
     .main-quote-background:after {
         content: url("/CMS_BackOffice/ResourceLink.aspx?ResourceName=quote-main-arrow-bottom&v=20150306042418");
@@ -47,3 +48,4 @@
     </div>
     <!--END highlights SECTION-->
 </div>
+{{/.}}
