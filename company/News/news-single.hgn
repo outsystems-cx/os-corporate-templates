@@ -13,16 +13,16 @@
     <div class="row">
         <div class="span8">
             <h4>
-                {{Details.NewsTitle}}
+                {{NewsTitle}}
             </h4>
             <h5>
-                {{Details.NewsSubTitle}}
+                {{NewsSubTitle}}
             </h5>
             <div style="width: 100%; border-top: 1px solid silver;height:1px;">
                 &nbsp;
             </div>
             <p class="byline">
-                {{Details.LocationAndDate}}
+                {{LocationAndDate}}
             </p>
         </div>
         %WEB%
@@ -35,9 +35,9 @@
     <div class="container">
         <div class="row top30">
             <div class="span8">
-               {{Details.NewsPostText}}
+               {{NewsPostText}}
             </div>
-               {{Details.QuoteHTML}}
+               {{QuoteHTML}}
             </div>
             %MOBILE%
             <div class="span4" style="width:320px; margin-left:-60px;">
