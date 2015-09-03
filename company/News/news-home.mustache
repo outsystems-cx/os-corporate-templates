@@ -30,11 +30,11 @@
                 {{#DetailsRelease}}
                 <div class="press-list-item-left">
                     <h4 class="press-list-title">
-                        <a class="press-list-link" href="/company/news{{DetailsRelease.FriendlyURL}}" target="">{{DetailsRelease.Title}}</a>
+                        <a class="press-list-link" href="/company/news{{FriendlyURL}}" target="">{{Title}}</a>
                     </h4>
-                    %WEB% <span class="press-list-desc">{{DetailsRelease.SubTitle}}</span> %/WEB%
+                    %WEB% <span class="press-list-desc">{{SubTitle}}</span> %/WEB%
                 </div>
-                ||task_name:pressrelease,data_url:https://dp1dev.outsystems.com/NewsAndCoverage/rest/api/getPressReleasePost?PressReleasePostId={{DetailsRelease.Id}},output_url:http://192.168.180.4/CMS_BackOffice/CMS_POC.aspx?Name={{DetailsRelease.FriendlyURL}}&URL=/company/news{{DetailsRelease.FriendlyURL}}||
+                ||task_name:pressrelease,data_url:https://dp1dev.outsystems.com/NewsAndCoverage/rest/api/getPressReleasePost?PressReleasePostId={{Id}},output_url:http://192.168.180.4/CMS_BackOffice/CMS_POC.aspx?Name={{FriendlyURL}}&URL=/company/news{{FriendlyURL}}||
                 {{/DetailsRelease}}
             </div>
 
@@ -44,11 +44,11 @@
                 %/MOBILE%
                 {{#DetailsCoverage}}
                 <div class="press-list-item">
-                    <div><img alt="ComputerWeekly" src="{{DetailsCoverage.URLImage}}" style="width: 160px; height: 29px;" /></div>
+                    <div><img alt="ComputerWeekly" src="{{URLImage}}" style="width: 160px; height: 29px;" /></div>
                     <div class="press-list-content-highlight">
                         <div class="press-list-content-highlight-inner">
-                            <h4 class="press-list-title"><a class="press-list-link" href="{{DetailsCoverage.Link}}" target="_blank">{{DetailsCoverage.Title}}</a></h4>
-                            <span class="press-list-desc">&quot;{{DetailsCoverage.SubTitle}}&quot;</span>
+                            <h4 class="press-list-title"><a class="press-list-link" href="{{Link}}" target="_blank">{{Title}}</a></h4>
+                            <span class="press-list-desc">&quot;{{SubTitle}}&quot;</span>
                         </div>
                     </div>
                 </div>
