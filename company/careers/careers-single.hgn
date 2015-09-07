@@ -18,7 +18,7 @@
 
         <div style="padding-top:40px;">
           <img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=careers-email&amp;v=20150701163815" style="margin-top:15px;margin-bottom: 15px;display: block;" />
-          <a id="mail-link'" class="osbtn osbtn-blue" href="mailto:careers@outsystems.com?subject={{JobTitle}}%20-%20{{SmallDescription}}&amp;body=(Attach%20your%20CV%20including%20your%20portfolio">Send us your CV and portfolio</a>
+          <a id="mail-link" class="osbtn osbtn-blue" href="mailto:careers@outsystems.com?subject={{JobTitle}}%20-%20{{SmallDescription}}&amp;body=(Attach%20your%20CV%20including%20your%20portfolio">Send us your CV and portfolio</a>
         </div>
         <div style="margin-top:50px;">
           <a href="/company/careers/">Back to Careers Page</a>
