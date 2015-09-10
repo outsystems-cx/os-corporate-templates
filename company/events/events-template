@@ -20,7 +20,7 @@
         <div class="span4">
           <div>
             <a href="{{Link}}" id="600-fi" name="600-fi" target="_blank">
-              <img alt="{{Title}}" class="event-list-image" src="{{URLImage}}" style="width: 246px; height: 51px;" />
+              <img alt="{{Title}}" class="event-list-image" src="{{URLImage}}" />
             </a>
           </div>
         </div>
