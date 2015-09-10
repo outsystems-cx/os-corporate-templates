@@ -1,259 +1,54 @@
+{{#.}}
 <style type="text/css">
   .agendarow_Item {
     background: url("/cms_backoffice/assets/20150731120920/bottom-line") no-repeat scroll -10%  bottom transparent;
     margin-left:-20px;
   }
-  .nextstep-highlight {
-    background: url("/cms_backoffice/assets/20150731120920/events-banner-ns15regionals-be") no-repeat;
-    font-size:18px;
-    color: white;
-    height: 162px;
-  }
-  .nextstep-highlight p{
-    line-height:1.5em;
-  }
 </style>
 <div class="container">
   <div class="row">
-    %WEB%
-    <div class="span12">
-      <iframe id="mkto_frame" scrolling="no" src="http://go1.outsystems.com/NextStepDynamicBanner2015.html" style="display: block; margin: 0px auto; border: 0px; height: 180px; width:980px;"></iframe>
-    </div>
-    %/WEB% %MOBILE%
-    <div class="span12">
-      <iframe id="mkto_frame" scrolling="no" src="http://go1.outsystems.com/NextStepDynamicBanner2015-mobile.html" style="display: block; margin: 0px auto; border: 0px; height: 240px; width:980px;"></iframe>
-    </div>
-    %/MOBILE%
+    {{IframeHtml}}
     <div class="span12 top40">
-      <h1>
-        Upcoming Events
-      </h1>
+      <h1>Upcoming Events</h1>
     </div>
+    
+    
     <!-- featured -->
     <div>
-      <div class="span4">
-        <div>
-          <a href="http://managementevents.com/events/finland/enterprise-mobility/583/" id="600-fi" name="600-fi" target="_blank"><img alt="Enterprise Mobility" class="event-list-image" src="/cms_backoffice/assets/20150731120920/600m" style="width: 246px; height: 51px;" /></a>
-        </div>
-      </div>
-      <div class="span8">
-        <div class="bot20">
-          <h4 style="margin-bottom: 2px;">
-            Enterprise Mobility
-          </h4>
-          <span class="byline">September 22, 2015 Helsinki - FI</span>&nbsp;<span class="past-list-desc">OutSystems will meet decision makers from Finland with needs for enterprise mobility. As a Platinum Sponsor for the event OutSystems will discuss how to easily develop apps once and deliver seamlessly across iOS, Android, Windows Phone, and Web - deeply integrated with existing cloud and on-premises databases and systems of record.</span> <a class="press-list-link" href="http://managementevents.com/events/finland/enterprise-mobility/583/" target="_blank">Visit event website</a>
-        </div>
-      </div>
-      %WEB%
-      <div class="clearfix">
-        &nbsp;
-      </div>
-      %/WEB% %MOBILE%
-      <div class="agendarow_Item">
-        &nbsp;
-      </div>
-      <div class="clearfix">
-        &nbsp;
-      </div>
-      %/MOBILE%
+    {{#Events}}
       <div>
         <div class="span4">
           <div>
-            <a href="http://www.itdf.com/Autumn-Conference.aspx" id="it-directors-fall" name="it-directors-fall" target="_blank"><img alt="The IT Directors' Forum - Autumn Conference" class="event-list-image" src="/cms_backoffice/assets/20150731120920/itdf-thumb" style="width: 308px; height: 101px;" /></a>
+            <a href="{{Events.Link}}" id="600-fi" name="600-fi" target="_blank">
+              <img alt="{{Events.Title}}" class="event-list-image" src="{{Events.URLImage}}" style="width: 246px; height: 51px;" />
+            </a>
           </div>
         </div>
         <div class="span8">
           <div class="bot20">
             <h4 style="margin-bottom: 2px;">
-              The IT Directors&#39; Forum - Autumn Conference
+              {{Events.Title}}
             </h4>
-            <span class="byline">October 7-10, 2015 Arcadia, Southampton - UK</span>&nbsp;<span class="past-list-desc">The Richmond Events IT Directors&rsquo; Forum aims to give senior IT professionals access to new ideas, solutions and innovations to help take their departments and companies forward. The agenda is pitched at a high level and endeavours to present new case studies and new thinkers on the programme each year, with keynote and seminar sessions, interactive workshops and discussion groups.</span> <a class="press-list-link" href="http://www.itdf.com/Autumn-Conference.aspx" target="_blank">Visit event website</a>
+            <span class="byline">{{Events.DateAndLocation}}</span>
+            &nbsp;
+            <span class="past-list-desc">{{Events.Description}}</span> 
+            <a class="press-list-link" href="{{Events.Link}}" target="_blank">Visit event website</a>
           </div>
         </div>
-        %WEB%
-        <div class="clearfix">
-          &nbsp;
-        </div>
-        %/WEB% %MOBILE%
-        <div class="agendarow_Item">
-          &nbsp;
-        </div>
-        <div class="clearfix">
-          &nbsp;
-        </div>
+        %MOBILE%
+        <div class="agendarow_Item">&nbsp;</div>
         %/MOBILE%
-        <div>
-          <div class="span4">
-            <div>
-              <a href="/nextstep-benelux/" id="nextstep-benelux" name="nextstep-benelux" target="_blank"><img alt="NextStep Benelux 2015" class="event-list-image" src="/cms_backoffice/assets/20150810105430/ns15-benelux-header-events" style="width: 308px; height: 134px;" /></a>
-            </div>
-          </div>
-          <div class="span8">
-            <div class="bot20">
-              <h4 style="margin-bottom: 2px;">
-                NextStep Benelux 2015
-              </h4>
-              <span class="byline">October 8, 2015 Maarssen, NL</span>&nbsp;<span class="past-list-desc">NextStep Benelux is the OutSystems annual conference for the region. This year&rsquo;s event features a rich agenda where you&#39;ll learn about game-changing IT application trends that includes: mobility, app connectivity, app integration, and UX design. Join CIOs, enterprise architects, developers and others to network, learn and grow!</span> <a class="press-list-link" href="/nextstep-benelux/" target="_blank">Visit event website</a>
-            </div>
-          </div>
-          %WEB%
-          <div class="clearfix">
-            &nbsp;
-          </div>
-          %/WEB% %MOBILE%
-          <div class="agendarow_Item">
-            &nbsp;
-          </div>
-          <div class="clearfix">
-            &nbsp;
-          </div>
-          %/MOBILE%
-          <div>
-            <div class="span4">
-              <div>
-                <a href="http://www.managementevents.com/600Minutes/ExecutiveIT.html" id="600-nl" name="600-nl" target="_blank"><img alt="600 Minutes' Forum - Autumn Conference" class="event-list-image" src="/cms_backoffice/assets/20150731120920/600m" style="width: 246px; height: 51px;" /></a>
-              </div>
-            </div>
-            <div class="span8">
-              <div class="bot20">
-                <h4 style="margin-bottom: 2px;">
-                  600 Minutes
-                </h4>
-                <span class="byline">October 14, 2015 Bussum - NL</span>&nbsp;<span class="past-list-desc">OutSystems will meet with decision makers with investment needs from Netherlands. In the 600 Minutes event, there will be also a chance to network to learn about the latest trends and find out the best solutions for business challenges, all in one day.</span> <a class="press-list-link" href="http://www.managementevents.com/600Minutes/ExecutiveIT.html" target="_blank">Visit event website</a>
-              </div>
-            </div>
-            %WEB%
-            <div class="clearfix">
-              &nbsp;
-            </div>
-            %/WEB% %MOBILE%
-            <div class="agendarow_Item">
-              &nbsp;
-            </div>
-            <div class="clearfix">
-              &nbsp;
-            </div>
-            %/MOBILE%
-            <div>
-              <div class="span4">
-                <div>
-                  <a href="http://www.managementevents.com/600Minutes/ExecutiveIT.html" id="600-sg" name="600-sg" target="_blank"><img alt="600 Minutes" class="event-list-image" src="/cms_backoffice/assets/20150731120920/600m" style="width: 246px; height: 51px;" /></a>
-                </div>
-              </div>
-              <div class="span8">
-                <div class="bot20">
-                  <h4 style="margin-bottom: 2px;">
-                    600 Minutes
-                  </h4>
-                  <span class="byline">October 15, 2015 Singapore - SG</span>&nbsp;<span class="past-list-desc">In this 600 minutes event,&nbsp;OutSystems will meet with decision makers from Singapore and will network regarding the latest trends and best solutions for business challenges.</span> <a class="press-list-link" href="http://www.managementevents.com/600Minutes/ExecutiveIT.html" target="_blank">Visit event website</a>
-                </div>
-              </div>
-              %WEB%
-              <div class="clearfix">
-                &nbsp;
-              </div>
-              %/WEB% %MOBILE%
-              <div class="agendarow_Item">
-                &nbsp;
-              </div>
-              <div class="clearfix">
-                &nbsp;
-              </div>
-              %/MOBILE%
-              <div>
-                <div class="span4">
-                  <div>
-                    <a href="http://www.gitex.com/" id="gitex" name="gitex" target="_blank"><img alt="Gitex" class="event-list-image" src="/cms_backoffice/assets/20150731120920/logo_gitex2015" style="width: 308px; height: 49px;" /></a>
-                  </div>
-                </div>
-                <div class="span8">
-                  <div class="bot20">
-                    <h4 style="margin-bottom: 2px;">
-                      Gitex 2015
-                    </h4>
-                    <span class="byline">October 18-22, 2015 Dubai - UAE</span>&nbsp;<span class="past-list-desc">OutSystems will be part of GITEX (Gulf Information Technology Exhibition), the annual consumer computer and electronics trade show, exhibition and conference. You can visit our booth In the Government Hall of this ICT business gateway to the Middle East, North Africa and South Asia Region dedicated to IT professionals and technology enthusiasts.</span> <a class="press-list-link" href="http://www.gitex.com/" target="_blank">Visit event website</a>
-                  </div>
-                </div>
-                %WEB%
-                <div class="clearfix">
-                  &nbsp;
-                </div>
-                %/WEB% %MOBILE%
-                <div class="agendarow_Item">
-                  &nbsp;
-                </div>
-                <div class="clearfix">
-                  &nbsp;
-                </div>
-                %/MOBILE%
-                <div>
-                  <div class="span4">
-                    <div>
-                      <a href="/nextstep-americas/" id="nextstep-americas" name="nextstep-benelux" target="_blank"><img alt="NextStep Americas 2015" class="event-list-image" src="/cms_backoffice/assets/20150810110025/ns15-americas-header-events" style="width: 308px; height: 133px;" /></a>
-                    </div>
-                  </div>
-                  <div class="span8">
-                    <div class="bot20">
-                      <h4 style="margin-bottom: 2px;">
-                        NextStep Americas 2015
-                      </h4>
-                      <span class="byline">October 20-21, 2015 Atlanta, US</span>&nbsp;<span class="past-list-desc">NextStep Americas brings our customers from the US, Canada, and Latin America together for two days in Atlanta in October. Learn first hand how you can evolve your processes, people, enterprise architecture, and platforms to radically transform your mobile and web enterprise app delivery capacity.</span> <a class="press-list-link" href="/nextstep-americas/" target="_blank">Visit event website</a>
-                    </div>
-                  </div>
-                  %WEB%
-                  <div class="clearfix">
-                    &nbsp;
-                  </div>
-                  %/WEB% %MOBILE%
-                  <div class="agendarow_Item">
-                    &nbsp;
-                  </div>
-                  <div class="clearfix">
-                    &nbsp;
-                  </div>
-                  %/MOBILE%
-                  <div>
-                    <div class="span4">
-                      <div>
-                        <a href="http://www.cloudexpoasia.com/" id="cloud-asia" name="cloud-asia" target="_blank"><img alt="Cloud Expo Asia" class="event-list-image" src="/cms_backoffice/assets/20150731120920/cealogo2015" style="width: 308px; height: 121px;" /></a>
-                      </div>
-                    </div>
-                    <div class="span8">
-                      <div class="bot20">
-                        <h4 style="margin-bottom: 2px;">
-                          Cloud Expo Asia
-                        </h4>
-                        <span class="byline">October 28-29, 2015 Singapore - SG</span>&nbsp;<span class="past-list-desc">Cloud Expo Asia gathers a pool of (BPA audited) senior IT professionals from large enterprise organisations, spreads across key vertical industries. It provides global thought leadership in cloud computing sharing innovation and insights from the industry&#39;s leading minds. OutSystems will be hosting a booth in the exhibition area.</span> <a class="press-list-link" href="http://www.cloudexpoasia.com/" target="_blank">Visit event website</a>
-                      </div>
-                    </div>
-                    %WEB%
-                    <div class="clearfix">
-                      &nbsp;
-                    </div>
-                    %/WEB% %MOBILE%
-                    <div class="agendarow_Item">
-                      &nbsp;
-                    </div>
-                    <div class="clearfix">
-                      &nbsp;
-                    </div>
-                    %/MOBILE%
-                  </div>
-                  <!-- end featured -->
-                  <div class="clearfix">
-                    &nbsp;
-                  </div>
-                  %WEB%
-                  <div class="separator-line">
-                    &nbsp;
-                  </div>
-                  %/WEB%
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="clearfix">&nbsp;</div>
       </div>
+      {{/Events}}
     </div>
+    <!-- end featured -->
+    <div class="clearfix">&nbsp;</div>
+    %WEB%
+    <div class="separator-line">&nbsp;</div>
+    %/WEB%
   </div>
 </div>
+            
+
+{{/.}}
