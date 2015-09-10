@@ -19,20 +19,20 @@
       <div>
         <div class="span4">
           <div>
-            <a href="{{Events.Link}}" id="600-fi" name="600-fi" target="_blank">
-              <img alt="{{Events.Title}}" class="event-list-image" src="{{Events.URLImage}}" style="width: 246px; height: 51px;" />
+            <a href="{{Link}}" id="600-fi" name="600-fi" target="_blank">
+              <img alt="{{Title}}" class="event-list-image" src="{{URLImage}}" style="width: 246px; height: 51px;" />
             </a>
           </div>
         </div>
         <div class="span8">
           <div class="bot20">
             <h4 style="margin-bottom: 2px;">
-              {{Events.Title}}
+              {{Title}}
             </h4>
-            <span class="byline">{{Events.DateAndLocation}}</span>
+            <span class="byline">{{DateAndLocation}}</span>
             &nbsp;
-            <span class="past-list-desc">{{Events.Description}}</span> 
-            <a class="press-list-link" href="{{Events.Link}}" target="_blank">Visit event website</a>
+            <span class="past-list-desc">{{Description}}</span> 
+            <a class="press-list-link" href="{{Link}}" target="_blank">Visit event website</a>
           </div>
         </div>
         %MOBILE%
