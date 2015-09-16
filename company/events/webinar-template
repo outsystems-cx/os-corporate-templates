@@ -1,0 +1,193 @@
+<style type="text/css">
+    .title1 {
+        font-family: 'myriad-pro', Helvetica, Arial, sans-serif;
+        color: #000000;
+        text-align: center;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 60px;
+    }
+        
+    .title3 {
+        font-family: 'myriad-pro', Helvetica, Arial, sans-serif;
+        color: black;
+        text-align: center;
+        font-weight: normal;
+        font-size: 24px;
+    }
+
+    .text-white {
+        font-family: 'myriad-pro', Helvetica, Arial, sans-serif;
+        color: #fff;
+        text-align: center;
+        font-weight: normal;
+        font-size: 21px;
+    }
+
+    .text-body {
+        font-family: 'myriad-pro', Helvetica, Arial, sans-serif;
+        text-align: left;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 22px;
+    }  
+     
+    .lp-socials {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        padding-left: 20px;
+    }
+
+    .trademark {
+        background-color: #333;
+        border-top-style: solid;
+        border-color: #606060;
+        border-width: 1px;
+        font-family: 'myriad-pro', Helvetica, Arial, sans-serif;
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        color: #606060;
+    }    
+
+    .triangle {
+        width: 0;
+        height: 0;
+        %WEB% border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-top: 40px solid #cccccc;
+        %/WEB% %MOBILE% border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-top: 40px solid white;
+        %/MOBILE%;
+    }
+
+    .center {
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+</style>
+<!--Header-->
+<div style="background-color:#cc0000; height:80px">
+    <div class="container">
+        <div class="row">
+            <div class="span4" style="margin-top: 24px; %MOBILE% text-align: center; %/MOBILE%">
+                <a href="/"><img src="/CMS_BackOffice/ResourceLink.aspx?ResourceName=os-logo2&amp;v=20150703163006" /> </a>
+            </div>
+            %WEB%
+            <div class="span8 title3" style="text-align:right;color:#fff;margin-top: 30px;">
+                %CONTACT-US%
+            </div>
+            %/WEB%
+        </div>
+    </div>
+</div>
+<!--Section 1-->
+{{#.}}
+<div style="%WEB%background-color:#cccccc;%/WEB%">
+    <div class="container">
+        <div class="row">
+            <div class="span12 ">
+                <h1 class="title1" style="margin-top: 40px; %MOBILE% font-size:30px; line-height:34px; margin-top: 40px; ">
+                    {{Title}}
+                </h1>
+            </div>
+            <div class="span8">
+                <p style="text-align: center;">                   
+                    <iframe id="mkto_frame" scrolling="no" src="{{IframeURL}}" style="%WEB%width:640px; min-height:420px; border:0px; margin:0 auto; display:block; background-image: url({{IframeImageLocalUrl}}); background-repeat:no-repeat;%/WEB% %MOBILE%min-height:500px;border:0px;margin-
+top:15px; width:100%;%/MOBILE%"></iframe>
+                    <script>
+var _gaq = _gaq || [];
+_gaq.push(function() {
+  var pageTracker = _gat._getTrackerByName();
+  var iframe = document.getElementById('mkto_frame');
+  iframe.src = pageTracker._getLinkerUrl(
+'{{IframeURL}}');
+});
+                    </script> 
+                    
+                </p>
+            </div>
+            <div class="span4 ">
+                <div style="margin-bottom:50px; padding-left:20px;">
+                    {{Presenters}}
+                    <div style="margin-top: 40px;">
+                        <p style="text-align: left; margin-top:30px;">
+                            <strong>Duration</strong>: {{Duration}}
+                        </p>
+                    </div>
+                </div>
+                <div class="lp-socials">
+                    &lt;%SOCIALS%&gt;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Section 2-->
+<div id="live-demo">
+    <div class="container">
+        <div class="row bot50">
+            <div class="triangle apps-center">
+                &nbsp;
+            </div>
+            <div class="span6">
+                <div style="display:block; text-align:center;">
+                    <p class="title3" style="margin-top: 20px; text-align: left;">
+                        In this webinar
+                    </p>
+                    <p class="text-body" style="margin-top:20px;">
+                        {{ContentLeft}}
+                    </p>
+                </div>
+            </div>
+            <div class="span6">
+                <div style="display:block; text-align:center;margin-top:65px;">
+                    <p class="text-body">
+                        <span style="font-family: myriad-pro, Helvetica, Arial, sans-serif; font-size: 18px; line-height: 22px;">{{ContentRight}}</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/.}}
+<!--Footer--><!-- Text font-size different from the mockup--><!-- Background color different from the mockup-->
+<div style="background-color:#333; %WEB%padding-top:10px;padding-bottom:10px;%/WEB% %MOBILE% padding-top: 20px;padding-bottom: 20px; %/MOBILE%">
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="span12">
+                <h3 class="text-white" style="text-align:left; font-size:20px;margin-bottom: 10px;">
+                    About OutSystems
+                </h3>
+                <h3 class="text-white" style="text-align:left; font-size:20px;margin-bottom: 20px;">
+                    OutSystems provides the enterprise Rapid Application Delivery (RAD) platform that makes it easy to develop apps once and deliver seamlessly across iOS, Android, Windows Phone, and Web - deeply integrated with existing cloud and on-premises databases and systems of record.
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="trademark">
+    <div class="container">
+        <div class="row">
+            <div class="span12 top10">
+                <p>
+                    Built with <a class="footer-op-link" href="/platform/?ref=f" style="text-decoration:none; color:#606060;">OutSystems<sup>&reg;</sup> Platform</a>&nbsp;- OutSystems &copy; All rights reserved. <a href="/legal/terms-of-use/" style="text-decoration:none; color:#606060;" title="Terms &amp; Conditions">Terms &amp; Conditions.</a> <a href="/legal/terms-of-use/privacy-statement/#7" style="text-decoration:none; color:#606060;">About Cookies.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hotjar Tracking Code for Target specific pages -->
+<script>
+    (function(f,b){
+        var c;
+        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+        f._hjSettings={hjid:31554, hjsv:4};
+        c=b.createElement("script");c.async=1;
+        c.src="//static.hotjar.com/c/hotjar-"+f._hjSettings.hjid+".js?sv="+f._hjSettings.hjsv;
+        b.getElementsByTagName("head")[0].appendChild(c);
+    })(window,document);
+</script>
