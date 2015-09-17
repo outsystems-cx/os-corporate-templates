@@ -139,16 +139,16 @@ _gaq.push(function() {
                     <p class="title3" style="margin-top: 20px; text-align: left;">
                         In this webinar
                     </p>
-                    <p class="text-body" style="margin-top:20px;">
+                    <div class="text-body" style="margin-top:20px;">
                         {{ContentLeft}}
-                    </p>
+                    </div>
                 </div>
             </div>
             <div class="span6">
                 <div style="display:block; text-align:center;margin-top:65px;">
-                    <p class="text-body">
-                        <span style="font-family: myriad-pro, Helvetica, Arial, sans-serif; font-size: 18px; line-height: 22px;">{{ContentRight}}</span>.
-                    </p>
+                    <div class="text-body"style="font-family: myriad-pro, Helvetica, Arial, sans-serif; font-size: 18px; line-height: 22px;">
+                       {{ContentRight}}
+                    </div>
                 </div>
             </div>
         </div>
