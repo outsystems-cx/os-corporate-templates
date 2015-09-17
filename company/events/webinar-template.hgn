@@ -89,7 +89,7 @@
     <div class="container">
         <div class="row">
             <div class="span12 ">
-                <h1 class="title1" style="margin-top: 40px; %MOBILE% font-size:30px; line-height:34px; margin-top: 40px; ">
+                <h1 class="title1" style="margin-top: 40px; %MOBILE% font-size:30px; line-height:34px; margin-top: 40px; %/MOBILE%">
                     {{Title}}
                 </h1>
             </div>
@@ -97,7 +97,7 @@
                 <p style="text-align: center;">                   
                  %WEB%<iframe id="mkto_frame" scrolling="no" src="{{IframeURL}}" style="width:640px; min-height:420px; border:0px; margin:0 auto; display:block; background-image: url({{IframeImageLocalUrl}}); background-repeat:no-repeat;"></iframe> %/WEB%
 
-                %MOBILE%<iframe id="mkto_frame" scrolling="no" src="{{IframeURL}}" style=" min-height:500px;border:0px;margin-
+                %MOBILE%<iframe id="mkto_frame" scrolling="no" src="{{IframeURL}}" style="min-height:500px;border:0px;margin-
 top:15px; width:100%;"></iframe>%/MOBILE%
                     <script>
 var _gaq = _gaq || [];
