@@ -31,6 +31,6 @@
 {{/.}}
 <script>
   $(function() {
-    $('#mail-link').attr('href',  $('#mail-link').attr('href').replace('&', '%26') );
+    $('#mail-link').attr('href',  $('#mail-link').attr('href').replace('&', '%26').replace('%26body','&body') );
   });
 </script>
