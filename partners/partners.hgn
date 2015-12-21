@@ -40,15 +40,13 @@
                           <a class="popup_link" href="/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">Contact Partner</a>
                         </div>
                       </div>
-                       <div class="AllianceDiv" align="right">
+                    </div>
+                    <div class="AllianceDiv" align="right">
                       {{#Alliances}}
-                     
                         <div class="AllianceImage">
                           <img alt="{{AllianceList.AllianceName}}" src="{{AllianceList.AllianceLogoLink}}">
                         </div>
-                      
                     {{/Alliances}}
-                    </div>
                     </div>
                     </div>
                   </div>
