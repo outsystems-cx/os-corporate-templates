@@ -26,8 +26,7 @@
                     <div style=" padding: 25px;">
                       <div class="PartnerImage">
                         <a href="{{Website}}" target="_blank">
-                            <img alt="{{Name}}" 
-                            src="{{LogoLink}}"/>
+                            <img alt="{{Name}}" src="{{LogoLink}}"/>
                         </a>
                       </div>
                       <div class="PartnersInfo" style="%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
@@ -41,16 +40,18 @@
                           <a class="popup_link" href="/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">Contact Partner</a>
                         </div>
                       </div>
+                       <div class="AllianceDiv" align="right">
                       {{#Alliances}}
-                      <div class="AllianceDiv" align="right">
+                     
                         <div class="AllianceImage">
-                          <img alt="{{AllianceName}}" src="{{AllianceLogoLink}}" style="">
+                          <img alt="{{AllianceList.AllianceName}}" src="{{AllianceList.AllianceLogoLink}}">
                         </div>
-                      </div>
+                      
                     {{/Alliances}}
                     </div>
+                    </div>
+                    </div>
                   </div>
-                </div>
                 {{/.}}
 
           </div>
