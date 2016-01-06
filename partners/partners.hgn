@@ -41,13 +41,6 @@
                         </div>
                       </div>
                     </div>
-                    <div class="AllianceDiv" align="right">
-                      {{#Alliances}}
-                        <div class="AllianceImage">
-                          <img alt="{{AllianceList.AllianceName}}" src="{{AllianceList.AllianceLogoLink}}">
-                        </div>
-                    {{/Alliances}}
-                    </div>
                     </div>
                   </div>
                 {{/.}}
