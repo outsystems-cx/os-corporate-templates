@@ -38,8 +38,7 @@
     $(window).load(function() {
         // init Isotope
         var $container = $('.isotype-resource-cards').isotope({
-            itemSelector: '.element-item',
-            layoutMode: 'masonry'
+            itemSelector: '.element-item'
         });
         // bind filter button-isotype click
         $('#filters').on('click', 'a', function() {
