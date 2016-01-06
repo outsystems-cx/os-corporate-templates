@@ -75,12 +75,12 @@
 
 
 
-    <div class="span12 ">
+    <div class="span12 isotype-resource-cards">
       <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
         <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"><!--page1-->
           
                 {{#.}} 
-                <div class="span6">
+                <div class="span6 element-item">
                   <div class="Partner">
                     <div style=" padding: 25px;">
                       <div class="PartnerImage">
