@@ -38,7 +38,8 @@
     $(window).load(function() {
         // init Isotope
         var $container = $('.isotype-resource-cards').isotope({
-            itemSelector: '.element-item'
+            itemSelector: '.element-item',
+            layoutMode: 'masonry'
         });
         // bind filter button-isotype click
         $('#filters').on('click', 'a', function() {
@@ -79,7 +80,10 @@
         <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"><!--page1-->
           
                 {{#.}} 
-                <div class="span6 element-item">
+                <div class= "element-item">
+
+
+                <div class="span6">
                   <div class="Partner">
                     <div style=" padding: 25px;">
                       <div class="PartnerImage">
@@ -100,6 +104,11 @@
                       </div>
                     </div>
                     </div>
+                  </div>
+
+
+
+
                   </div>
                 {{/.}}
 
