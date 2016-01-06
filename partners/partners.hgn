@@ -3,7 +3,7 @@
     <div class="span1">
       &nbsp;
     </div>
-    <div class="PartnerPageSubtitle span10">
+    <div class="PartnerPageSubtitle span10" style="padding-bottom: 0px;">
       %MOBILE%
       <div style="color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
         Our Partner Network
@@ -16,6 +16,65 @@
     <div class="span1">
       &nbsp;
     </div>
+
+
+
+
+
+
+    <div class="span12" style="padding-bottom:20px;">
+    <div class="   ">
+    <h5>Click the tags below to filter partners by their alliances:</h5>
+    </div>
+
+    <div class="">
+    <div class="button-isotype-group" id="filters"><a class="button-isotype is-checked" data-filter="*" href="#">All</a> <a class="button-isotype" data-filter=".IBM" href="#">IBM</a> <a class="button-isotype" data-filter=".Microsoft" href="#">Microsoft</a> <a class="button-isotype" data-filter=".Oracle" href="#">Oracle</a> <a class="button-isotype" data-filter=".SAP" href="#">SAP</a></div>
+    </div>
+    </div>
+
+    <script>
+    var filterValueArray = new Array();
+    var filterValueArray = new Array();
+    $(window).load(function() {
+        // init Isotope
+        var $container = $('.isotype-resource-cards').isotope({
+            itemSelector: '.element-item',
+            layoutMode: 'masonry'
+        });
+        // bind filter button-isotype click
+        $('#filters').on('click', 'a', function() {
+           /* var value = $(this).attr('data-filter');
+            var index = filterValueArray.indexOf(value);
+            if (index === -1) {
+                filterValueArray.push(value);
+            } else {
+                filterValueArray.splice(index, 1);
+            }
+            filterValueArray = $.unique(filterValueArray);
+            filterValue = filterValueArray.toString();*/
+            var filterValue = $( this ).attr('data-filter');
+            $container.isotope({
+                filter: filterValue
+            });
+        });
+        // change is-checked class on button-isotypes
+        $('.button-isotype-group').each(function(i, buttonGroup) {
+            var $buttonGroup = $(buttonGroup);
+            $buttonGroup.on('click', 'a', function(e) {
+                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                $( this ).addClass('is-checked');
+            });
+        });
+    });
+    </script>
+
+
+
+
+
+
+
+
     <div class="span12">
       <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
         <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"><!--page1-->
