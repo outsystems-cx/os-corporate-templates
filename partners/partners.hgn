@@ -80,7 +80,7 @@
         <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"><!--page1-->
           
                 {{#.}} 
-                <div class="span6 element-item forceRelative" style="position:relative!important;">
+                <div class="span6 element-item forcePosition" style="position:relative!important;">
                   <div class="Partner">
                     <div style=" padding: 25px;">
                       <div class="PartnerImage">
