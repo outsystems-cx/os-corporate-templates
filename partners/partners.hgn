@@ -53,8 +53,7 @@
                 <!--page1-->
                     {{#.}}
 
-                    <div class="span6" style=
-                    "position:relative!important;">
+                    <div class="span6">
                         <div class="Partner">
                             <div style=" padding: 25px;">
                                 <div class="PartnerImage">
