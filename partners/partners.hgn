@@ -1,185 +1,149 @@
 <div class="container">
-    <div class="row" style="padding: 7px 0px 1px; float: left;">
-        <div class="span1">
-            &nbsp;
+  <div class="row" style="padding: 7px 0px 1px; float: left;">
+    <div class="span1">
+      &nbsp;
+    </div>
+    <div class="PartnerPageSubtitle span10" style="padding-bottom: 0px;">
+      %MOBILE%
+      <div style=
+      "color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
+      Our Partner Network
+    </div>
+    %/MOBILE%
+    <p>OutSystems is proud to partner with innovative and leading
+      companies. Our partners use OutSystems Platform to deliver
+      enterprise-grade custom mobile and web applications to companies
+      across the globe.</p>
+    </div>
+    <div class="span1">
+      &nbsp;
+    </div>
+    <div class="span12" style="padding-bottom:20px;">
+      <div class="">
+        <h5>Click the tags below to filter partners by their
+          alliances:</h5>
         </div>
-
-
-        <div class="PartnerPageSubtitle span10" style="padding-bottom: 0px;">
-            %MOBILE%
-
-            <div style=
-            "color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
-            Our Partner Network
-            </div>
-            %/MOBILE%
-
-            <p>OutSystems is proud to partner with innovative and leading
-            companies. Our partners use OutSystems Platform to deliver
-            enterprise-grade custom mobile and web applications to companies
-            across the globe.</p>
+        <div class="">
+          <div class="button-isotype-group" id="filters">
+            <a class="button-isotype is-checked" data-filter="*" href=
+            "#">All</a> <a class="button-isotype" data-filter=".IBM"
+            href="#">IBM</a> <a class="button-isotype" data-filter=
+            ".Microsoft" href="#">Microsoft</a> <a class=
+            "button-isotype" data-filter=".Oracle" href="#">Oracle</a>
+            <a class="button-isotype" data-filter=".SAP" href=
+            "#">SAP</a>
+          </div>
         </div>
+      </div>
 
+      <!-- ....................................................ALL BEGIN.................................................... -->
 
-        <div class="span1">
-            &nbsp;
-        </div>
-
-
-        <div class="span12" style="padding-bottom:20px;">
-            <div class="">
-                <h5>Click the tags below to filter partners by their
-                alliances:</h5>
-            </div>
-
-
-            <div class="">
-                <div class="button-isotype-group" id="filters">
-                    <a class="button-isotype is-checked" data-filter="*" href=
-                    "#">All</a> <a class="button-isotype" data-filter=".IBM"
-                    href="#">IBM</a> <a class="button-isotype" data-filter=
-                    ".Microsoft" href="#">Microsoft</a> <a class=
-                    "button-isotype" data-filter=".Oracle" href="#">Oracle</a>
-                    <a class="button-isotype" data-filter=".SAP" href=
-                    "#">SAP</a>
-                </div>
-            </div>
-        </div>
-
-
-<!-- ....................................................ALL BEGIN.................................................... -->
-
-        <div class="span12">
-            <div class=
-            "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
-                <div class="m-carousel-inner" style=
-                "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
-                
-                    {{#.}}
-
-                    <div class="span6">
-                        <div class="Partner">
-                            <div style=" padding: 25px;">
-                                <div class="PartnerImage">
-                                    <a href="{{Website}}" target=
-                                    "_blank"><img alt="{{Name}}" src=
-                                    "{{LogoLink}}"></a>
-                                </div>
-
-
-                                <div class="PartnersInfo" style=
-                                "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
-                                <p>{{Description}}</p>
-
-
-                                    <div class="SeeMore">
-                                        <a href="{{Website}}" target=
-                                        "_blank">See More</a>
-                                    </div>
-
-
-                                    <div class="SeeMore">
-                                        <a class="popup_link" href=
-                                        "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
-                                        Contact Partner</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{/.}}
-
-
-                </div>
-              <div class="row">
-                  <div class=
-                  "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
-                  style=" display: inline-block;">
-                  </div>
+      <div class="span12">
+        <div class=
+        "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
+        <div class="m-carousel-inner" style=
+        "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
+        {{#.}}
+        <div class="span6">
+          <div class="Partner">
+            <div style=" padding: 25px;">
+              <div class="PartnerImage">
+                <a href="{{Website}}" target=
+                "_blank"><img alt="{{Name}}" src=
+                "{{LogoLink}}"></a>
+              </div>
+              <div class="PartnersInfo" style=
+              "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
+              <p>{{Description}}</p>
+              <div class="SeeMore">
+                <a href="{{Website}}" target=
+                "_blank">See More</a>
+              </div>
+              <div class="SeeMore">
+                <a class="popup_link" href=
+                "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
+                Contact Partner</a>
               </div>
             </div>
+          </div>
         </div>
-        
+      </div>
+      {{/.}}
+    </div>
+    <div class="row">
+      <div class=
+      "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
+      style=" display: inline-block;">
+    </div>
+  </div>
+</div>
+</div>
+
 <!-- ....................................................ALL END................................................... -->
 
 <!-- ....................................................IBM BEGIN.................................................... -->
 
-        <div class="span12">
-            <div class=
-            "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
-                <div class="m-carousel-inner" style=
-                "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
-                
-                    {{#.}}
-                    {{#isIBM}}
-                    <div class="span6">
-                        <div class="Partner">
-                            <div style=" padding: 25px;">
-                                <div class="PartnerImage">
-                                    <a href="{{Website}}" target=
-                                    "_blank"><img alt="{{Name}}" src=
-                                    "{{LogoLink}}"></a>
-                                </div>
-
-
-                                <div class="PartnersInfo" style=
-                                "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
-                                <p>{{Description}}</p>
-
-
-                                    <div class="SeeMore">
-                                        <a href="{{Website}}" target=
-                                        "_blank">See More</a>
-                                    </div>
-
-
-                                    <div class="SeeMore">
-                                        <a class="popup_link" href=
-                                        "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
-                                        Contact Partner</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{/isIBM}}      
-
-                    {{^isIBM}}
-                
-                    {{/isIBM}}
-                    {{/.}}
-
-
-                </div>
-              <div class="row">
-                  <div class=
-                  "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
-                  style=" display: inline-block;">
-                  </div>
-              </div>
-            </div>
+<div class="span12">
+  <div class=
+  "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
+  <div class="m-carousel-inner" style=
+  "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">     
+  {{#.}}
+  {{#isIBM}}
+  <div class="span6">
+    <div class="Partner">
+      <div style=" padding: 25px;">
+        <div class="PartnerImage">
+          <a href="{{Website}}" target=
+          "_blank"><img alt="{{Name}}" src=
+          "{{LogoLink}}"></a>
         </div>
+        <div class="PartnersInfo" style=
+        "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
+        <p>{{Description}}</p>
+        <div class="SeeMore">
+          <a href="{{Website}}" target=
+          "_blank">See More</a>
+        </div>
+        <div class="SeeMore">
+          <a class="popup_link" href=
+          "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
+          Contact Partner</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/isIBM}}      
+{{^isIBM}}
+test
+{{/isIBM}}
+{{/.}}
+</div>
+<div class="row">
+  <div class=
+  "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
+  style=" display: inline-block;">
+</div>
+</div>
+</div>
+</div>
 
 <!-- ....................................................IBM END................................................... -->
 
-        <div class=
-        "container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=
-        " display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
-        %WEB%Ready to take advantage of our program?%/WEB% <a class=
-        "osbtn osbtn-red" data-name="Become Partner" data-option="" href=
-        "/partners/become-a-partner/" id=
-        "wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=
-        " margin-left: 70px;"><span class="try-now">Become a partner</span></a>
-        </div>
-    </div>
+<div class=
+"container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=
+" display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
+%WEB%Ready to take advantage of our program?%/WEB% <a class=
+"osbtn osbtn-red" data-name="Become Partner" data-option="" href=
+"/partners/become-a-partner/" id=
+"wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=
+" margin-left: 70px;"><span class="try-now">Become a partner</span></a>
 </div>
-
-
-
+</div>
+</div>
 <script>
-$(document).ready(function() {
+  $(document).ready(function() {
     //wrap - pagination
     var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
 
