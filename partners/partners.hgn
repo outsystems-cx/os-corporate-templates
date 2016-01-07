@@ -85,15 +85,16 @@
                     </div>
                     {{/.}}
                 </div>
+              <div class="row">
+                  <div class=
+                  "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
+                  style=" display: inline-block;">
+                  </div>
+              </div>
             </div>
 
 
-            <div class="row">
-                <div class=
-                "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
-                style=" display: inline-block;">
-                </div>
-            </div>
+
         </div>
 
 
