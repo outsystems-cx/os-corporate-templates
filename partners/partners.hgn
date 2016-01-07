@@ -52,6 +52,10 @@
                 "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
                 <!--page1-->
                     {{#.}}
+  {{#isIBM}}
+  
+
+
 
                     <div class="span6">
                         <div class="Partner">
@@ -84,6 +88,8 @@
                         </div>
                     </div>
                     {{/.}}
+
+{{/isIBM}}                    
                 </div>
               <div class="row">
                   <div class=
