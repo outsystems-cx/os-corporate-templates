@@ -178,11 +178,11 @@ $(document).ready(function() {
     for (var i = 0; i < logoBoxes.length; i += 8) {
         if (i == 0) {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
-            paginationHTML += ' %WEB% <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1<\/a>';
+            paginationHTML += ' %WEB% <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'<\/a>';
 
         } else {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
-            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1<\/a> %/WEB% ';
+            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'<\/a> %/WEB% ';
         }
 
         pag++;
