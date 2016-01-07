@@ -169,7 +169,6 @@
         });
       });
     });
-});
 updateCarouselQuotesControls();
 var size = 250;
 var p = $('.PartnersInfo p');
@@ -181,5 +180,6 @@ p.each(function(index, el) {
       size: size
     });
   }
+});
 });
 </script>
