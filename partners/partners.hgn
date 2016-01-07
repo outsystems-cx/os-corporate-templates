@@ -50,13 +50,9 @@
             "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
                 <div class="m-carousel-inner" style=
                 "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
-                <!--page1-->
+                
                     {{#.}}
-  {{#isIBM}}
-  
-
-
-
+                    {{#isIBM}}
                     <div class="span6">
                         <div class="Partner">
                             <div style=" padding: 25px;">
@@ -90,8 +86,8 @@
                     {{/isIBM}}      
 
                     {{^isIBM}}
-            value is false
-                  {{/isIBM}}
+                
+                    {{/isIBM}}
                     {{/.}}
 
 
@@ -103,9 +99,6 @@
                   </div>
               </div>
             </div>
-
-
-
         </div>
 
 
@@ -137,12 +130,12 @@ $(document).ready(function() {
         if (i == 0) {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
 
-            paginationHTML += ' %WEB% <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a>';
+            paginationHTML += '  <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a>';
 
         } else {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
 
-            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a> %/WEB% ';
+            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a>  ';
         }
 
         pag++;
@@ -206,14 +199,6 @@ $(function() {
         }
       });
     });
-});
-
-
-
-
-
-
-
     updateCarouselQuotesControls();
     var size = 250;
     var p = $('.PartnersInfo p');
@@ -226,5 +211,6 @@ $(function() {
             });
         }
     });
+});
 });
 </script>
