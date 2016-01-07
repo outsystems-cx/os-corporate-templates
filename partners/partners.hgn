@@ -87,9 +87,10 @@
                             </div>
                         </div>
                     </div>
+                    {{/isIBM}}      
                     {{/.}}
 
-{{/isIBM}}                    
+
                 </div>
               <div class="row">
                   <div class=
