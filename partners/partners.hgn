@@ -182,5 +182,4 @@ p.each(function(index, el) {
     });
   }
 });
-});
 </script>
