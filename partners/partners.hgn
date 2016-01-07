@@ -1,41 +1,54 @@
 <div class="container">
-  <div class="row" style="padding: 7px 0px 1px; float: left;">
-    <div class="span1">
-      &nbsp;
-    </div>
-    <div class="PartnerPageSubtitle span10" style="padding-bottom: 0px;">
-      %MOBILE%
-      <div style="color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
-        Our Partner Network
-      </div>
-      %/MOBILE%
-      <p>
-        OutSystems is proud to partner with innovative and leading companies. Our partners use OutSystems Platform to deliver enterprise-grade custom mobile and web applications to companies across the globe.
-      </p>
-    </div>
-    <div class="span1">
-      &nbsp;
-    </div>
+    <div class="row" style="padding: 7px 0px 1px; float: left;">
+        <div class="span1">
+            &nbsp;
+        </div>
 
 
+        <div class="PartnerPageSubtitle span10" style="padding-bottom: 0px;">
+            %MOBILE%
+
+            <div style=
+            "color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
+            Our Partner Network
+            </div>
+            %/MOBILE%
+
+            <p>OutSystems is proud to partner with innovative and leading
+            companies. Our partners use OutSystems Platform to deliver
+            enterprise-grade custom mobile and web applications to companies
+            across the globe.</p>
+        </div>
 
 
+        <div class="span1">
+            &nbsp;
+        </div>
 
 
-    <div class="span12" style="padding-bottom:20px;">
-    <div class="   ">
-    <h5>Click the tags below to filter partners by their alliances:</h5>
-    </div>
+        <div class="span12" style="padding-bottom:20px;">
+            <div class="">
+                <h5>Click the tags below to filter partners by their
+                alliances:</h5>
+            </div>
 
-    <div class="">
-    <div class="button-isotype-group" id="filters"><a class="button-isotype is-checked" data-filter="*" href="#">All</a> <a class="button-isotype" data-filter=".IBM" href="#">IBM</a> <a class="button-isotype" data-filter=".Microsoft" href="#">Microsoft</a> <a class="button-isotype" data-filter=".Oracle" href="#">Oracle</a> <a class="button-isotype" data-filter=".SAP" href="#">SAP</a></div>
-    </div>
-    </div>
 
-    <script>
-    var filterValueArray = new Array();
-    var filterValueArray = new Array();
-    $(window).load(function() {
+            <div class="">
+                <div class="button-isotype-group" id="filters">
+                    <a class="button-isotype is-checked" data-filter="*" href=
+                    "#">All</a> <a class="button-isotype" data-filter=".IBM"
+                    href="#">IBM</a> <a class="button-isotype" data-filter=
+                    ".Microsoft" href="#">Microsoft</a> <a class=
+                    "button-isotype" data-filter=".Oracle" href="#">Oracle</a>
+                    <a class="button-isotype" data-filter=".SAP" href=
+                    "#">SAP</a>
+                </div>
+            </div>
+        </div>
+        <script>
+        var filterValueArray = new Array();
+        var filterValueArray = new Array();
+        $(window).load(function() {
         // init Isotope
         var $container = $('.isotype-resource-cards').isotope({
             itemSelector: '.element-item',
@@ -65,67 +78,72 @@
                 $( this ).addClass('is-checked');
             });
         });
-    });
-    </script>
+        });
+        </script>
+
+        <div class="span12 isotype-resource-cards">
+            <div class=
+            "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
+                <div class="m-carousel-inner" style=
+                "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
+                <!--page1-->
+                    {{#.}}
+
+                    <div class="span6 element-item" style=
+                    "position:relative!important;">
+                        <div class="Partner">
+                            <div style=" padding: 25px;">
+                                <div class="PartnerImage">
+                                    <a href="{{Website}}" target=
+                                    "_blank"><img alt="{{Name}}" src=
+                                    "{{LogoLink}}"></a>
+                                </div>
 
 
+                                <div class="PartnersInfo" style=
+                                "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
+                                <p>{{Description}}</p>
 
 
+                                    <div class="SeeMore">
+                                        <a href="{{Website}}" target=
+                                        "_blank">See More</a>
+                                    </div>
 
 
-
-
-    <div class="span12 isotype-resource-cards">
-      <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
-        <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"><!--page1-->
-          
-                {{#.}} 
-                <div class="span6 element-item" style="position:relative!important;">
-                  <div class="Partner">
-                    <div style=" padding: 25px;">
-                      <div class="PartnerImage">
-                        <a href="{{Website}}" target="_blank">
-                            <img alt="{{Name}}" src="{{LogoLink}}"/>
-                        </a>
-                      </div>
-                      <div class="PartnersInfo" style="%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
-                        <p>
-                          {{Description}}
-                        </p>
-                        <div class="SeeMore">
-                          <a href="{{Website}}" target="_blank">See More</a>
+                                    <div class="SeeMore">
+                                        <a class="popup_link" href=
+                                        "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
+                                        Contact Partner</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="SeeMore">
-                          <a class="popup_link" href="/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">Contact Partner</a>
-                        </div>
-                      </div>
                     </div>
-                    </div>
-                  </div>
-                {{/.}}
+                    {{/.}}
+                </div>
+            </div>
 
-          </div>
+
+            <div class="row">
+                <div class=
+                "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
+                style=" display: inline-block;">
+                </div>
+            </div>
         </div>
 
 
-
-        <div class="row">
-
-
-          <div class="span12 m-carousel-controls m-carousel-pagination PartnersPagination" style=" display: inline-block;">
-
-            
-
-          </div>
-
-
+        <div class=
+        "container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=
+        " display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
+        %WEB%Ready to take advantage of our program?%/WEB% <a class=
+        "osbtn osbtn-red" data-name="Become Partner" data-option="" href=
+        "/partners/become-a-partner/" id=
+        "wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=
+        " margin-left: 70px;"><span class="try-now">Become a partner</span></a>
         </div>
-      </div>
-      <div class="container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=" display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
-        %WEB%Ready to take advantage of our program?%/WEB% <a class="osbtn osbtn-red" data-name="Become Partner" data-option="" href="/partners/become-a-partner/" id="wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=" margin-left: 70px;"><span class="try-now">Become a partner</span></a>
-      </div>
     </div>
-  </div>
 </div>
 <script type="text/javascript">
 var mCarouselQuotes;
@@ -182,31 +200,31 @@ $(function() {
       });
     });
 });
-</script>
+</script> 
 <script>
 $(document).ready(function() {
 
     //wrap - pagination
     var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
 
-    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a> ';
+    var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous<\/a> ';
     var pag = 1;
 
     var logoBoxes = $('.m-carousel-inner  .span6');
     for (var i = 0; i < logoBoxes.length; i += 8) {
         if (i == 0) {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
-            paginationHTML += ' %WEB% <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a>';
+            paginationHTML += ' %WEB% <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1<\/a>';
 
         } else {
             logoBoxes.slice(i, i + 8).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
-            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1</a> %/WEB% ';
+            paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">1<\/a> %/WEB% ';
         }
 
         pag++;
     }
 
-    paginationHTML += ' <a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a>';
+    paginationHTML += ' <a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next<\/a>';
     
     paginationWrapper.append(paginationHTML);
 
