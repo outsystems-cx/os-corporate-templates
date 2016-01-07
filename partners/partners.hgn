@@ -35,9 +35,6 @@
           </div>
         </div>
       </div>
-
-      <!-- ....................................................ALL BEGIN.................................................... -->
-
       <div class="span12">
         <div class=
         "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
@@ -79,51 +76,6 @@
 </div>
 </div>
 
-<!-- ....................................................ALL END................................................... -->
-
-<!-- ....................................................IBM BEGIN.................................................... -->
-
-<div class="span12">
-  <div class=
-  "PartnerListIBM magiccontainer container m-carousel m-quotes m-fluid">
-  <div class="m-carousel-inner" style=
-  "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">     
-  {{#.}}
-  {{#isIBM}}
-  <div class="span6">
-    <div class="Partner">
-      <div style=" padding: 25px;">
-        <div class="PartnerImage">
-          <a href="{{Website}}" target=
-          "_blank"><img alt="{{Name}}" src=
-          "{{LogoLink}}"></a>
-        </div>
-        <div class="PartnersInfo" style=
-        "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
-        <p>{{Description}}</p>
-        <div class="SeeMore">
-          <a href="{{Website}}" target=
-          "_blank">See More again</a>
-        </div>
-        <div class="SeeMore">
-          <a class="popup_link" href=
-          "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
-          Contact Partner</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{/isIBM}}      
-{{^isIBM}}
-{{/isIBM}}
-{{/.}}
-</div>
-</div>
-</div>
-
-<!-- ....................................................IBM END................................................... -->
-
 <div class=
 "container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=
 " display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
@@ -137,7 +89,6 @@
 </div>
 <script>
   $(document).ready(function() {
-    $('.PartnerList, .PartnerListIBM').each(function(){
     //wrap - pagination
     var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
 
@@ -216,20 +167,20 @@
             mCarouselQuotes.find('.pxs_prev').show();
           }
         });
-        });
-        updateCarouselQuotesControls();
       });
-      });
-      var size = 250;
-      var p = $('.PartnersInfo p');
-      p.each(function(index, el) {
-        textDefault = $.trim($(el).text());
-        if (textDefault.length > size) {
-          $(el).attr('title', textDefault);
-          $(el).succinct({
-            size: size
-          });
-        }
     });
+});
+updateCarouselQuotesControls();
+var size = 250;
+var p = $('.PartnersInfo p');
+p.each(function(index, el) {
+  textDefault = $.trim($(el).text());
+  if (textDefault.length > size) {
+    $(el).attr('title', textDefault);
+    $(el).succinct({
+      size: size
+    });
+  }
+});
 });
 </script>
