@@ -26,12 +26,12 @@
         <div class="">
           <div class="button-isotype-group" id="filters">
             <a class="button-isotype is-checked" data-filter="*" href=
-            "#">All</a> <a class="button-isotype" data-filter=".IBM"
-            href="#">IBM</a> <a class="button-isotype" data-filter=
-            ".Microsoft" href="#">Microsoft</a> <a class=
-            "button-isotype" data-filter=".Oracle" href="#">Oracle</a>
+            "/partners">All</a> <a class="button-isotype" data-filter=".IBM"
+            href="/partners/ibm">IBM</a> <a class="button-isotype" data-filter=
+            ".Microsoft" href="/partners/microsoft">Microsoft</a> <a class=
+            "button-isotype" data-filter=".Oracle" href="/partners/oracle">Oracle</a>
             <a class="button-isotype" data-filter=".SAP" href=
-            "#">SAP</a>
+            "/partners/sap">SAP</a>
           </div>
         </div>
       </div>
