@@ -103,7 +103,7 @@
     var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a> ';
     var pag = 1;
 
-    var logoBoxes = $('.m-carousel-inner > .row');
+    var logoBoxes = $('.m-carousel-inner > .span6');
     for (var i = 0; i < logoBoxes.length; i += 16) {
       if (i == 0) {
         logoBoxes.slice(i, i + 16).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
@@ -176,8 +176,8 @@
           }
         });
       });
+      updateCarouselQuotesControls();
     });
-updateCarouselQuotesControls();
 var size = 250;
 var p = $('.PartnersInfo p');
 p.each(function(index, el) {
