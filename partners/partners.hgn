@@ -25,7 +25,7 @@
         </div>
         <div class="">
           <div class="button-isotype-group" id="filters">
-            <a class="button-isotype is-checked" data-filter="*" href=
+            <a class="button-isotype" data-filter="*" href=
             "/partners/">All</a> <a class="button-isotype" data-filter=".IBM"
             href="/partners/ibm/">IBM</a> <a class="button-isotype" data-filter=
             ".Microsoft" href="/partners/microsoft/">Microsoft</a> <a class=
@@ -88,7 +88,17 @@
 </div>
 </div>
 <script>
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      $("a.button-isotype[href='" + pathname + "'']").addClass('is-checked');
+    });
+</script>
+
+
+<script>
   $(document).ready(function() {
+
+
     //wrap - pagination
     var paginationWrapper = $('.m-carousel-controls.m-carousel-pagination');
 
@@ -183,3 +193,4 @@ p.each(function(index, el) {
 });
 });
 </script>
+
