@@ -90,7 +90,7 @@
 <script>
     $(document).ready(function() {
       var pathname = window.location.pathname;
-      $("a.button-isotype[href='" + pathname + "]").addClass('is-checked');
+      $("a.button-isotype[href='" + pathname + "']").addClass('is-checked');
     });
 </script>
 
