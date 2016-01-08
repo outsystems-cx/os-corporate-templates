@@ -123,7 +123,7 @@
     
     paginationWrapper.append(paginationHTML);
 
-    if(logoBoxes.length >= 16) {
+    if(logoBoxes.length <= 16) {
       $('.m-carousel-controls.m-carousel-pagination').hide();
     }  
 
