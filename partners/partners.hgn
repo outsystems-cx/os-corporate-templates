@@ -105,14 +105,14 @@ Alliances:
     var pag = 1;
 
     var logoBoxes = $('.m-carousel-inner > .span6');
-      for (var i = 0; i < logoBoxes.length; i += 4) {
+      for (var i = 0; i < logoBoxes.length; i += 16) {
         if (i == 0) {
-        logoBoxes.slice(i, i + 4).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
+        logoBoxes.slice(i, i + 16).wrapAll('<div class="container m-item m-active" style="pointer-events: all;"><div class="row"><\/div><\/div>');
 
         paginationHTML += '  <a class="m-active" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a>';
 
       } else {
-        logoBoxes.slice(i, i + 4).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
+        logoBoxes.slice(i, i + 16).wrapAll('<div class="container m-item" style="pointer-events: all;"><div class="row"><\/div><\/div>');
 
         paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a>  ';
       }
@@ -124,7 +124,7 @@ Alliances:
     
     paginationWrapper.append(paginationHTML);
 
-    if(logoBoxes.length <= 4) {
+    if(logoBoxes.length <= 16) {
       $('.m-carousel-controls.m-carousel-pagination').hide();
     }  
 
