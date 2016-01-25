@@ -43,17 +43,12 @@ Alliances:
         "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
         {{#.}}
         <div class="span6">
-          <div class="Partner">
+          <div class="Partner" data-ispremiere="{{isPremier}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
-                <a href="{{Website}}" target=
-                "_blank"><img alt="{{Name}}" src=
-                "{{LogoLink}}">
-                
-                {{#isPremier}}
-                <img alt="Premier" src="http://extranetqa.outsystems.net/cms_backoffice/assets/20160125183410/premier1">
-                {{/isPremier}}
-                
+                <a href="{{Website}}" target="_blank">
+                <img alt="{{Name}}" src="{{LogoLink}}">
+                <img alt="Premier" src="http://extranetqa.outsystems.net/cms_backoffice/assets/20160125183410/premier1">    
                 </a>
               </div>
               <div class="PartnersInfo" style=
