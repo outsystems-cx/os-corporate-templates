@@ -48,7 +48,13 @@ Alliances:
               <div class="PartnerImage">
                 <a href="{{Website}}" target=
                 "_blank"><img alt="{{Name}}" src=
-                "{{LogoLink}}"></a>
+                "{{LogoLink}}">
+                
+                {{#isPremier}}
+                <img alt="Premier" src="http://extranetqa.outsystems.net/cms_backoffice/assets/20160125183410/premier1">
+                {{/isPremier}}
+                
+                </a>
               </div>
               <div class="PartnersInfo" style=
               "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
