@@ -32,7 +32,7 @@
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
                 <img alt="{{Name}}" src="{{LogoLink}}">
-                <img alt="Premier" class="premiere-logo" src="http://extranetqa.outsystems.net/cms_backoffice/assets/20160125183410/premier1">    
+                <img alt="Premier" class="premiere-logo" src="/cms_backoffice/assets/20160125183434/premier1">    
                 </a>
               </div>
               <div class="PartnersInfo" style=
