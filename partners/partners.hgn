@@ -63,7 +63,7 @@
 </div>
 
 <div class=
-"container %WEB%top50%/WEB% %MOBILE%bot20%/MOBILE% align-center" style=
+"container %WEB%top50% bot60/WEB% %MOBILE%bot20%/MOBILE% align-center" style=
 " display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
 %WEB%Ready to take advantage of our program?%/WEB% <a class=
 "osbtn osbtn-red" data-name="Become Partner" data-option="" href=
