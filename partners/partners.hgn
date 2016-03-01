@@ -25,6 +25,8 @@
         "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
         <div class="m-carousel-inner" style=
         "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
+      
+
         {{#.}}
         <div class="span6">
           <div class="Partner" data-ispremiere="{{isPremier}}">
@@ -38,7 +40,7 @@
               <div class="PartnersInfo" style=
               "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
               <p>{{Description}}</p>
-              <div class="SeeMore">
+              <div class="SeeMore" data-website="{{WithWebsite}}">
                 <a href="{{Website}}" target=
                 "_blank">See More</a>
               </div>
@@ -52,6 +54,7 @@
         </div>
       </div>
       {{/.}}
+
     </div>
     <div class="row">
       <div class=
@@ -63,7 +66,7 @@
 </div>
 
 <div class=
-"container %WEB%top50% bot60/WEB% %MOBILE%bot20%/MOBILE% align-center" style=
+"container %WEB% top50 bot60 %/WEB% %MOBILE% bot20 %/MOBILE% align-center" style=
 " display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
 %WEB%Ready to take advantage of our program?%/WEB% <a class=
 "osbtn osbtn-red" data-name="Become Partner" data-option="" href=
