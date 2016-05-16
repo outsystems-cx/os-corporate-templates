@@ -341,13 +341,13 @@ function updateCountriesSelect(selectCountry) {
 };
 
 $(document).ready(function() {
-  var selectCountry = $('<div class="select-style"><select id="country"></select></div>').change(function() {
+  var selectCountry = $('<select id="country"></select>').change(function() {
     window.selectedCountry = $(this).val();
     filterPartners();
   });
   updateCountriesSelect(selectCountry);
 
-  var selectTerritory = $('<div class="select-style"><select id="territory"></select></div>').change(function() {
+  var selectTerritory = $('<select id="territory"></select>').change(function() {
     window.selectedTerritory = $(this).val();
     updateCountriesSelect(selectCountry);
     filterPartners();
@@ -357,7 +357,7 @@ $(document).ready(function() {
     selectTerritory.append('<option value="' + val + '">' + val + '</option>');
   });
 
-  var filterRow = $('<div class="row"></div>').append($('<div class="span12 dropdown" ></div>').append(selectTerritory).append(selectCountry));
+  var filterRow = $('<div class="row"></div>').append($('<div class="span12 dropdown" ></div>').append($('<div class="select-style"></div>').append(selectTerritory)).append($('<div class="select-style"></div>').append(selectCountry)));
   filterRow.insertBefore($('.PartnerList'));
 
   reloadPartnerList();
