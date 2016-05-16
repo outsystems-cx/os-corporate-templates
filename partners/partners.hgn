@@ -19,6 +19,13 @@ select#country, select#territory {
     text-decoration: none;
     margin-left: 10px;
 }
+
+.dropdown{
+  text-align: right;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e7eced;
+}
 </style>
 
 
@@ -328,12 +335,7 @@ $(document).ready(function() {
     selectTerritory.append('<option value="' + val + '">' + val + '</option>');
   });
 
-  var filterRow = $('<div class="row"></div>').append($('<div class="span12" style="
-    text-align: right;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e7eced;
-"></div>').append(selectTerritory).append(selectCountry));
+  var filterRow = $('<div class="row"></div>').append($('<div class="span12 dropdown" ></div>').append(selectTerritory).append(selectCountry));
   filterRow.insertBefore($('.PartnerList'));
 
   reloadPartnerList();
