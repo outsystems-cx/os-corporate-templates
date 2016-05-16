@@ -25,6 +25,29 @@ select#country, select#territory {
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
+
+.select-style {
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
 </style>
 
 
@@ -318,13 +341,13 @@ function updateCountriesSelect(selectCountry) {
 };
 
 $(document).ready(function() {
-  var selectCountry = $('<select id="country"></select>').change(function() {
+  var selectCountry = $('<div class="select-style"><select id="country"></select></div>').change(function() {
     window.selectedCountry = $(this).val();
     filterPartners();
   });
   updateCountriesSelect(selectCountry);
 
-  var selectTerritory = $('<select id="territory"></select>').change(function() {
+  var selectTerritory = $('<div class="select-style"><select id="territory"></select></div>').change(function() {
     window.selectedTerritory = $(this).val();
     updateCountriesSelect(selectCountry);
     filterPartners();
