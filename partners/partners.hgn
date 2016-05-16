@@ -11,7 +11,7 @@
     width: 120px;
     border-radius: 3px;
     overflow: hidden;
-    background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 95% 50%;
+    background: #fff url("/partnerarea/img/arrowdown.gif") no-repeat 95% 50%;
     display: inline-block;
     margin-left: 10px;
 }
