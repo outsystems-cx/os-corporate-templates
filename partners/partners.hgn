@@ -23,8 +23,7 @@ select#country, select#territory {
 .dropdown{
   text-align: right;
   padding-bottom: 15px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #e7eced;
+  margin-bottom: 15px;  
 }
 </style>
 
