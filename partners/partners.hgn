@@ -25,16 +25,16 @@
         "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
         <div class="m-carousel-inner" style=
         "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
-
+      
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}" data-Territory="{{Territory}}" data-Country="{{Country}}" >
+          <div class="Partner" data-ispremiere="{{isPremier}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
                 <img alt="{{Name}}" src="{{LogoLink}}">
-                <img alt="Premier" class="premiere-logo" src="/cms_backoffice/assets/20160125183434/premier1">
+                <img alt="Premier" class="premiere-logo" src="/cms_backoffice/assets/20160125183434/premier1">    
                 </a>
               </div>
               <div class="PartnersInfo" style=
@@ -105,16 +105,16 @@
         paginationHTML += '<a data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a>  ';
       }
 
-      pag++;
+      pag++; 
     }
 
     paginationHTML += ' <a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a>';
-
+    
     paginationWrapper.append(paginationHTML);
 
     if(logoBoxes.length <= 16) {
       $('.m-carousel-controls.m-carousel-pagination').hide();
-    }
+    }  
 
     var mCarouselQuotes;
     function updateCarouselQuotesControls() {
