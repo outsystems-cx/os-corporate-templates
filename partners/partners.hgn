@@ -60,7 +60,7 @@ select#country, select#territory {
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}" data-Territory="{{Territory}}" data-Country="{{Country}}" >
+          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}"  data-Country="{{Country}}" >
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
