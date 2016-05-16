@@ -82,4 +82,235 @@
       $("a.button-isotype[href='" + pathname + "']").addClass('is-checked');
     });
 </script>
-<script src="partners.js" type="text/javascript" charset="UTF-8"></script>
+
+
+
+<script >
+
+$(document).ready(function() {
+
+  window.partners = window.filteredPartners = $('.m-carousel-inner > .span6 .Partner').map(function() {
+    var p = $(this),
+        name = p.find('.PartnerImage img').attr('alt'),
+        isPremier = p.data('ispremiere'),
+        territory = p.data('territory'),
+        country = p.data('country'),
+        website = p.find('.PartnerImage a').attr('href'),
+        logo = p.find('.PartnerImage img').attr('src'),
+        description = p.find('.PartnersInfo p').text(),
+        contactLink = p.find('.PartnersInfo .popup_link').attr('href');
+
+    return {
+      name: name,
+      isPremier: isPremier,
+      website: website,
+      logo: logo,
+      description: description,
+      contactLink: contactLink,
+      territory: territory,
+      country: country
+    };
+  });
+
+  var territories = [];
+  var countries = [];
+  var territoryCountryMap = {};
+  for (var i=0; i < partners.length; i++) {
+    var territory = partners[i].territory;
+    if ($.inArray(territory, territories) == -1) {
+      territories.push(territory);
+    }
+    var country = partners[i].country;
+    if ($.inArray(country, countries) == -1) {
+      countries.push(country);
+    }
+    territoryCountryMap[territory] = territoryCountryMap[territory] || [];
+    if ($.inArray(country, territoryCountryMap[territory]) == -1) {
+      territoryCountryMap[territory].push(country);
+      territoryCountryMap[territory].sort();
+    }
+  }
+  territories.sort();
+  countries.sort();
+  territoryCountryMap[''] = countries;
+  window.territories = territories;
+  window.countries = countries;
+  window.territoryCountryMap = territoryCountryMap;
+  window.selectedTerritory = window.selectedCountry = '';
+});
+
+
+
+function filterPartners() {
+  window.filteredPartners = [];
+  console.log(window.selectedTerritory, window.selectedCountry);
+  for (var i=0; i < partners.length; i++) {
+    var partnerTerritory = partners[i].territory;
+    var partnerCountry = partners[i].country;
+    if ((window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
+        (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
+      window.filteredPartners.push(partners[i]);
+    }
+  }
+  reloadPartnerList();
+};
+
+function reloadPartnerList() {
+  var orig = $('.PartnerList');
+  var newRoot = $('<div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid"></div>');
+  newRoot.html('<div class="m-carousel-inner" style="pointer-events: none; -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"></div><div class="row"><div class="span12 m-carousel-controls m-carousel-pagination PartnersPagination" style=" display: inline-block;"></div></div>');
+  newRoot.insertBefore(orig);
+  orig.remove();
+
+  $('.m-carousel-inner > .span6').remove();
+
+  var x = $('.m-carousel-inner');
+  $(window.filteredPartners).each(function(i, p){
+    var html = '<div class="span6">';
+    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '">';
+    html += '      <div style=" padding: 25px;">';
+    html += '        <div class="PartnerImage">';
+    html += '          <a href="' + p.website + '" target="_blank">';
+    html += '          <img alt="' + p.name + '" src="' + p.logo + '">';
+    html += '          <img alt="Premier" class="premiere-logo" src="http://www.outsystems.com/cms_backoffice/assets/20160125183434/premier1">';
+    html += '          </a>';
+    html += '        </div>';
+    html += '        <div class="PartnersInfo" style=" width: 310px;  ">';
+    html += '        <p>' + p.description + '</p>';
+    html += '        <div class="SeeMore" data-website="True">';
+    html += '          <a href="' + p.website + '" target="_blank">See More</a>';
+    html += '        </div>';
+    html += '        <div class="SeeMore">';
+    html += '          <a class="popup_link" href="' + p.contactLink + '">Contact Partner</a>';
+    html += '        </div>';
+    html += '      </div>';
+    html += '    </div>';
+    html += '  </div>';
+    html += '</div>';
+    x.append(html);
+  });
+
+  var partnersPerPage = 16;
+
+  //wrap - pagination
+  var paginationHTML = ' <a class="pxs_prev" data-slide="prev" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Previous</a> ';
+  var logoBoxes = $('.m-carousel-inner > .span6');
+  for (var pag = 1, i = 0; i < logoBoxes.length; i += partnersPerPage, pag++) {
+    var classActive = (pag == 1) ? 'm-active' : '';
+    logoBoxes.slice(i, i + partnersPerPage).wrapAll('<div class="container m-item ' + classActive + '" style="pointer-events: all;"><div class="row"><\/div><\/div>');
+    paginationHTML += '  <a class="' + classActive + '" data-slide="' + pag + '" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000)">'+ pag +'</a>';
+  }
+
+  paginationHTML += ' <a class="pxs_next" data-slide="next" href="#" onclick="$(\'html, body\').animate({ scrollTop:450 }, 1000);" style="background: none;">Next</a>';
+
+  $('.m-carousel-controls.m-carousel-pagination').append(paginationHTML);
+
+  if(logoBoxes.length <= partnersPerPage) {
+    $('.m-carousel-controls.m-carousel-pagination').hide();
+  }
+
+  var quotes;
+  function updateCarouselQuotesControls() {
+    if (quotes.children('.m-carousel-inner').children(':last').hasClass('m-active')) {
+      quotes.find('.pxs_next').hide();
+    } else {
+      quotes.find('.pxs_next').show();
+    }
+    if (quotes.children('.m-carousel-inner').children(':first').hasClass('m-active')) {
+      quotes.find('.pxs_prev').hide();
+    } else {
+      quotes.find('.pxs_prev').show();
+    }
+    quotes.carousel('unbind');
+  }
+
+  var totalslides = $('.m-carousel-inner').children().length;
+  quotes = $('.m-carousel.m-quotes').carousel();
+  quotes.find('.pxs_prev').bind('click', function() {
+    if(quotes.children('.m-carousel-inner').children(':nth-child(2)').hasClass('m-active')){
+      quotes.find('.pxs_prev').hide();
+      quotes.find('.pxs_next').show();
+    }
+    else{
+      quotes.find('.pxs_next').show();
+      quotes.find('.pxs_prev').show();
+    }
+  });
+  quotes.find('.pxs_next').bind('click', function() {
+    if(quotes.children('.m-carousel-inner').children(':nth-child('+ (totalslides-1) +')').hasClass('m-active')){
+      quotes.find('.pxs_next').hide();
+      quotes.find('.pxs_prev').show();
+    }
+    else{
+      quotes.find('.pxs_next').show();
+      quotes.find('.pxs_prev').show();
+    }
+  });
+  $('.m-carousel-controls.m-carousel-pagination>a:not(.m-carousel-controls.m-carousel-pagination>a.pxs_prev):not(.m-carousel-controls.m-carousel-pagination>a.pxs_next)').each(function(){
+    $(this).bind('click', function(){
+      if( $(this)[0] == $('.m-carousel-controls.m-carousel-pagination>a[data-slide=' + totalslides + ']')[0] ){
+        quotes.find('.pxs_next').hide();
+        quotes.find('.pxs_prev').show();
+      }
+      else if( $(this)[0] == $('.m-carousel-controls.m-carousel-pagination>a[data-slide=1]')[0]){
+        quotes.find('.pxs_prev').hide();
+        quotes.find('.pxs_next').show();
+      }
+      else{
+        quotes.find('.pxs_next').show();
+        quotes.find('.pxs_prev').show();
+      }
+    });
+  });
+  updateCarouselQuotesControls();
+
+  var size = 250;
+  var p = $('.PartnersInfo p');
+  p.each(function(index, el) {
+    textDefault = $.trim($(el).text());
+    if (textDefault.length > size) {
+      $(el).attr('title', textDefault);
+      $(el).succinct({
+        size: size
+      });
+    }
+  });
+};
+
+function updateCountriesSelect(selectCountry) {
+  selectCountry.html('');
+  var filteredCountries = territoryCountryMap[window.selectedTerritory];
+  console.log(selectedTerritory, 'a', filteredCountries)
+  selectCountry.append('<option value="">Select country</option>');
+  $(filteredCountries).each(function(i, val){
+    selectCountry.append('<option value="' + val + '">' + val + '</option>');
+  });
+};
+
+$(document).ready(function() {
+  var selectCountry = $('<select id="country"></select>').change(function() {
+    window.selectedCountry = $(this).val();
+    filterPartners();
+  });
+  updateCountriesSelect(selectCountry);
+
+  var selectTerritory = $('<select id="territory"></select>').change(function() {
+    window.selectedTerritory = $(this).val();
+    updateCountriesSelect(selectCountry);
+    filterPartners();
+  });
+  selectTerritory.append('<option value="">Select territory</option>');
+  $(territories).each(function(i, val){
+    selectTerritory.append('<option value="' + val + '">' + val + '</option>');
+  });
+
+  var filterRow = $('<div class="row"></div>').append($('<div class="span12"></div>').append(selectTerritory).append(selectCountry));
+  filterRow.insertBefore($('.PartnerList'));
+
+  reloadPartnerList();
+});
+
+
+
+
+</script>
