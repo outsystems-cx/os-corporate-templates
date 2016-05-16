@@ -60,7 +60,7 @@ select#country, select#territory {
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}"  data-Country="{{Country}}" >
+          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}" data-Country="{{Country}}" >
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
@@ -198,7 +198,7 @@ function reloadPartnerList() {
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
     var html = '<div class="span6">';
-    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '">';
+    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '">';
     html += '      <div style=" padding: 25px;">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
