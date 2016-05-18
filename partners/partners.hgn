@@ -331,6 +331,7 @@ $(document).ready(function() {
 
   var selectTerritory = $('<select id="territory"></select>').change(function() {
     window.selectedTerritory = $(this).val();
+    window.selectedCountry = '';
     updateCountriesSelect(selectCountry);
     filterPartners();
   });
