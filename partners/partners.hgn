@@ -340,7 +340,7 @@ $(document).ready(function() {
     selectTerritory.append('<option value="' + val + '">' + val + '</option>');
   });
 
-  var filterRow = $('<div class="row"></div>').append($('<div class="span12 dropdown" ></div>').append($('<div class="select-style"></div>').append(selectTerritory)).append($('<div class="select-style"></div>').append(selectCountry)));
+  var filterRow = $('<div class="row"></div>').append($('<div class="span12 dropdown" ></div>').append($('<div class="select-style"></div>').append(selectCountry)));
   filterRow.insertBefore($('.PartnerList'));
 
   reloadPartnerList();
