@@ -186,7 +186,8 @@ function filterPartners() {
     var partnerTerritory = partners[i].territory;
     var partnerCountry = partners[i].country;
     var isGlobal = partners[i].IsGlobal;
-    if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
+    var push =
+    if (isGlobal == 'False'  || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
         (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
       window.filteredPartners.push(partners[i]);
     }
