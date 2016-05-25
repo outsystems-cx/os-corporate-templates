@@ -64,7 +64,7 @@
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}" data-Country="{{Country}}" data-isGlobal="{{IsGlobal}}">
+          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}" data-Country="{{Country}}" data-isglobal="{{IsGlobal}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
@@ -129,7 +129,7 @@ $(document).ready(function() {
     var p = $(this),
         name = p.find('.PartnerImage img').attr('alt'),
         isPremier = p.data('ispremiere'),
-        IsGlobal = p.data('isGlobal'),
+        IsGlobal = p.data('isglobal'),
         territory = p.data('territory'),
         country = p.data('country'),
         website = p.find('.PartnerImage a').attr('href'),
@@ -208,7 +208,7 @@ function reloadPartnerList() {
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
     var html = '<div class="span6">';
-    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '" data-isGlobal="' + p.IsGlobal + '">';
+    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '" data-isglobal="' + p.IsGlobal + '">';
     html += '      <div style=" padding: 25px;">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
