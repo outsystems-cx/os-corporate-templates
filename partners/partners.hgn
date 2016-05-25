@@ -64,12 +64,13 @@
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}" data-Country="{{Country}}" >
+          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}" data-Country="{{Country}}" data-isGlobal="{{IsGlobal}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
                 <img alt="{{Name}}" src="{{LogoLink}}">
-                <img alt="Premier" class="premiere-logo" src="/cms_backoffice/assets/20160125183434/premier1">
+                <img alt="Premier" class="premiere-logo" src="/cms_backoffice/assets/20160525120234/partnerpremier">
+                <img alt="Premier" class="global-logo" src="/cms_backoffice/assets/20160525120253/partnerglobal">
                 </a>
               </div>
               <div class="PartnersInfo" style=
@@ -128,6 +129,7 @@ $(document).ready(function() {
     var p = $(this),
         name = p.find('.PartnerImage img').attr('alt'),
         isPremier = p.data('ispremiere'),
+        IsGlobal = p.data('IsGlobal'),
         territory = p.data('territory'),
         country = p.data('country'),
         website = p.find('.PartnerImage a').attr('href'),
@@ -138,6 +140,7 @@ $(document).ready(function() {
     return {
       name: name,
       isPremier: isPremier,
+      IsGlobal: IsGlobal,
       website: website,
       logo: logo,
       description: description,
@@ -151,6 +154,8 @@ $(document).ready(function() {
   var countries = [];
   var territoryCountryMap = {};
   for (var i=0; i < partners.length; i++) {
+
+
     var territory = partners[i].territory;
     if ($.inArray(territory, territories) == -1) {
       territories.push(territory);
@@ -182,7 +187,8 @@ function filterPartners() {
   for (var i=0; i < partners.length; i++) {
     var partnerTerritory = partners[i].territory;
     var partnerCountry = partners[i].country;
-    if ((window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
+    var isGlobal = partners[i].IsGlobal;
+    if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
         (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
       window.filteredPartners.push(partners[i]);
     }
@@ -202,12 +208,13 @@ function reloadPartnerList() {
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
     var html = '<div class="span6">';
-    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '">';
+    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '" data-isGlobal="' + p.IsGlobal + '">';
     html += '      <div style=" padding: 25px;">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
     html += '          <img alt="' + p.name + '" src="' + p.logo + '">';
-    html += '          <img alt="Premier" class="premiere-logo" src="http://www.outsystems.com/cms_backoffice/assets/20160125183434/premier1">';
+    html += '          <img alt="Premier" class="premiere-logo" src="http://www.outsystems.com/cms_backoffice/assets/20160525120234/partnerpremier">';
+    html += '          <img alt="Premier" class="global-logo" src="http://www.outsystems.com/cms_backoffice/assets/20160525120253/partnerglobal">';
     html += '          </a>';
     html += '        </div>';
     html += '        <div class="PartnersInfo" style=" width: 310px;  ">';
