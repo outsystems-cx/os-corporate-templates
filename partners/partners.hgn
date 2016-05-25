@@ -185,8 +185,8 @@ function filterPartners() {
   for (var i=0; i < partners.length; i++) {
     var partnerTerritory = partners[i].territory;
     var partnerCountry = partners[i].country;
-    var isGlobal = partners[i].IsGlobal;    
-    if (isGlobal == 'False'  || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
+    var isGlobal = partners[i].IsGlobal;
+    if (isGlobal == 'True'  || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
         (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
       window.filteredPartners.push(partners[i]);
     }
