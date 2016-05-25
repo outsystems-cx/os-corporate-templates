@@ -129,7 +129,7 @@ $(document).ready(function() {
     var p = $(this),
         name = p.find('.PartnerImage img').attr('alt'),
         isPremier = p.data('ispremiere'),
-        IsGlobal = p.data('IsGlobal'),
+        IsGlobal = p.data('isGlobal'),
         territory = p.data('territory'),
         country = p.data('country'),
         website = p.find('.PartnerImage a').attr('href'),
