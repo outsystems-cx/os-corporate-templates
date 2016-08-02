@@ -181,7 +181,7 @@ $(document).ready(function() {
 
 function filterPartners() {
   window.filteredPartners = [];
-  console.log(window.selectedTerritory, window.selectedCountry);
+
   for (var i=0; i < partners.length; i++) {
     var partnerTerritory = partners[i].territory;
     var partnerCountry = partners[i].country;
@@ -320,7 +320,7 @@ function reloadPartnerList() {
 function updateCountriesSelect(selectCountry) {
   selectCountry.html('');
   var filteredCountries = territoryCountryMap[window.selectedTerritory];
-  console.log(selectedTerritory, 'a', filteredCountries)
+
   selectCountry.append('<option value="">Select country</option>');
   $(filteredCountries).each(function(i, val){
     selectCountry.append('<option value="' + val + '">' + val + '</option>');
