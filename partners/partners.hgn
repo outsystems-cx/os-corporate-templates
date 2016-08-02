@@ -211,8 +211,8 @@ function reloadPartnerList() {
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
     html += '          <img alt="' + p.name + '" src="' + p.logo + '">';
-    html += '          <img alt="Premier" class="premiere-logo" src="http://www.outsystems.com/cms_backoffice/assets/20160525120234/partnerpremier">';
-    html += '          <img alt="Premier" class="global-logo" src="http://www.outsystems.com/cms_backoffice/assets/20160525120253/partnerglobal">';
+    html += '          <img alt="Premier" class="premiere-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120234/partnerpremier">';
+    html += '          <img alt="Premier" class="global-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120253/partnerglobal">';
     html += '          </a>';
     html += '        </div>';
     html += '        <div class="PartnersInfo" style=" width: 310px;  ">';
