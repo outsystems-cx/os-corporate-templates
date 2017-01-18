@@ -129,7 +129,7 @@ $(document).ready(function() {
         isPremier = p.data('ispremiere'),
         IsGlobal = p.data('isglobal'),
         territory = p.data('territory'),
-        countries = p.data('countries'),
+        countries = p.data('countries').split('$') || [],
         website = p.find('.PartnerImage a').attr('href'),
         logo = p.find('.PartnerImage img').attr('src'),
         description = p.find('.PartnersInfo p').text(),
@@ -156,7 +156,7 @@ $(document).ready(function() {
     if ($.inArray(territory, territories) == -1) {
         territories.push(territory);
     }    
-    var partnerCountries = partners[i].countries.split('$');    
+    var partnerCountries = partners[i].countries;    
     for (var j=0; j < partnerCountries.length; j++) {      
        	var country = partnerCountries[j];      
        	if ($.inArray(country, countries) == -1) {        
@@ -185,7 +185,7 @@ function filterPartners() {
 	for (var i=0; i < partners.length; i++) {
 	    var isGlobal = partners[i].isGlobal;
     	var partnerTerritory = partners[i].territory;
-    	var partnerCountries = partners[i].countries || [];
+    	var partnerCountries = partners[i].countries;
     	for (var j=0; j < partnerCountries.length; j++) {
         	var partnerCountry = partnerCountries[j];
         	if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
