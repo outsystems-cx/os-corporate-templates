@@ -144,7 +144,7 @@ $(document).ready(function() {
       description: description,
       contactLink: contactLink,
       territory: territory,
-      country: country
+      countries: countries
     };
   });
 
