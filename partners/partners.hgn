@@ -64,7 +64,7 @@
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}" data-Country="{{Country}}" data-isglobal="{{IsGlobal}}">
+          <div class="Partner" data-ispremiere="{{isPremier}}"  data-Territory="{{Territory}}" data-Country="{{Countries}}" data-isglobal="{{IsGlobal}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
@@ -152,20 +152,21 @@ $(document).ready(function() {
   var countries = [];
   var territoryCountryMap = {};
   for (var i=0; i < partners.length; i++) {
-
-
     var territory = partners[i].territory;
     if ($.inArray(territory, territories) == -1) {
-      territories.push(territory);
-    }
-    var country = partners[i].country;
-    if ($.inArray(country, countries) == -1) {
-      countries.push(country);
-    }
-    territoryCountryMap[territory] = territoryCountryMap[territory] || [];
-    if ($.inArray(country, territoryCountryMap[territory]) == -1) {
-      territoryCountryMap[territory].push(country);
-      territoryCountryMap[territory].sort();
+        territories.push(territory);
+    }    
+    var partnerCountries = partners[i].countries;    
+    for (var j=0; j < partnerCountries.length; j++) {      
+       	var country = partnerCountries[j];      
+       	if ($.inArray(country, countries) == -1) {        
+       		countries.push(country);      
+       	}      
+       	territoryCountryMap[territory] = territoryCountryMap[territory] || [];      
+       	if ($.inArray(country, territoryCountryMap[territory]) == -1) {
+       		territoryCountryMap[territory].push(country);        
+       		territoryCountryMap[territory].sort();      
+      	}
     }
   }
   territories.sort();
@@ -180,18 +181,19 @@ $(document).ready(function() {
 
 
 function filterPartners() {
-  window.filteredPartners = [];
-
-  for (var i=0; i < partners.length; i++) {
-    var partnerTerritory = partners[i].territory;
-    var partnerCountry = partners[i].country;
-    var isGlobal = partners[i].IsGlobal;
-    if (isGlobal == 'True'  || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) &&
-        (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
-      window.filteredPartners.push(partners[i]);
-    }
-  }
-  reloadPartnerList();
+    window.filteredPartners = [];
+	for (var i=0; i < partners.length; i++) {
+	    var isGlobal = partners[i].isGlobal;
+    	var partnerTerritory = partners[i].territory;
+    	var partnerCountries = partners[i].countries || [];
+    	for (var j=0; j < partnerCountries.length; j++) {
+        	var partnerCountry = partnerCountries[j];
+        	if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
+            	window.filteredPartners.push(partners[i]);
+        	}
+    	}
+    }  
+        reloadPartnerList();
 };
 
 function reloadPartnerList() {
