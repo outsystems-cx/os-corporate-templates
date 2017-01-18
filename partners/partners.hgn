@@ -156,7 +156,7 @@ $(document).ready(function() {
     if ($.inArray(territory, territories) == -1) {
         territories.push(territory);
     }    
-    var partnerCountries = partners[i].countries;    
+    var partnerCountries = partners[i].countries.split('$');    
     for (var j=0; j < partnerCountries.length; j++) {      
        	var country = partnerCountries[j];      
        	if ($.inArray(country, countries) == -1) {        
