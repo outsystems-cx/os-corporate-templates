@@ -129,7 +129,7 @@ $(document).ready(function() {
         isPremier = p.data('ispremiere'),
         IsGlobal = p.data('isglobal'),
         territory = p.data('territory'),
-        country = p.data('country'),
+        country = p.data('countries'),
         website = p.find('.PartnerImage a').attr('href'),
         logo = p.find('.PartnerImage img').attr('src'),
         description = p.find('.PartnersInfo p').text(),
