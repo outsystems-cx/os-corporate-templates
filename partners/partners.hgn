@@ -352,8 +352,23 @@ $(document).ready(function() {
 
   reloadPartnerList();
 });
-
-
-
-
+</script>
+<script>
+$(document).ready(function(){
+  //open any link (CMS, another module) with the class popup_link with a popup
+    if ((/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) && width < 767) {
+        //ignore popups in mobile
+    } else {
+        $('a.popup_link').each(function() {
+            if (!$(this).attr('id')) {
+                $(this).attr('id', Math.random().toString().replace('.', ''));
+            }
+            var popupH = $(this).attr('popup-height');
+            if (popupH === undefined) {
+                popupH = -1;
+            };
+            RichWidgets_Popup_Editor_init($(this).attr('id'), '', ' ', popupH, -1, $(this).attr('href'), true, true);
+        });
+    }
+});
 </script>
