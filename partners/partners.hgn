@@ -64,7 +64,7 @@
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}"  data-territory="{{Territory}}" data-countries="{{Countries}}" data-isglobal="{{IsGlobal}}">
+          <div class="Partner" data-partnership="{{partnership}}"  data-territory="{{Territory}}" data-countries="{{Countries}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
@@ -126,8 +126,7 @@ $(document).ready(function() {
   window.partners = window.filteredPartners = $('.m-carousel-inner > .span6 .Partner').map(function() {
     var p = $(this),
         name = p.find('.PartnerImage img').attr('alt'),
-        isPremier = p.data('ispremiere'),
-        IsGlobal = p.data('isglobal'),
+        partnership = p.data('partnership'),
         territory = p.data('territory'),
         countries = p.data('countries').split('$') || [],
         website = p.find('.PartnerImage a').attr('href'),
@@ -137,8 +136,7 @@ $(document).ready(function() {
 
     return {
       name: name,
-      isPremier: isPremier,
-      IsGlobal: IsGlobal,
+      partnership: partnership,
       website: website,
       logo: logo,
       description: description,
@@ -158,15 +156,15 @@ $(document).ready(function() {
     }    
     var partnerCountries = partners[i].countries;    
     for (var j=0; j < partnerCountries.length; j++) {      
-       	var country = partnerCountries[j];      
-       	if ($.inArray(country, countries) == -1) {        
-       		countries.push(country);      
-       	}      
-       	territoryCountryMap[territory] = territoryCountryMap[territory] || [];      
-       	if ($.inArray(country, territoryCountryMap[territory]) == -1) {
-       		territoryCountryMap[territory].push(country);        
-       		territoryCountryMap[territory].sort();      
-      	}
+        var country = partnerCountries[j];      
+        if ($.inArray(country, countries) == -1) {        
+          countries.push(country);      
+        }      
+        territoryCountryMap[territory] = territoryCountryMap[territory] || [];      
+        if ($.inArray(country, territoryCountryMap[territory]) == -1) {
+          territoryCountryMap[territory].push(country);        
+          territoryCountryMap[territory].sort();      
+        }
     }
   }
   territories.sort();
@@ -182,16 +180,15 @@ $(document).ready(function() {
 
 function filterPartners() {
     window.filteredPartners = [];
-	for (var i=0; i < partners.length; i++) {
-	    var isGlobal = partners[i].isGlobal;
-    	var partnerTerritory = partners[i].territory;
-    	var partnerCountries = partners[i].countries;
-    	for (var j=0; j < partnerCountries.length; j++) {
-        	var partnerCountry = partnerCountries[j];
-        	if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
-            	window.filteredPartners.push(partners[i]);
-        	}
-    	}
+  for (var i=0; i < partners.length; i++) {
+      var partnerTerritory = partners[i].territory;
+      var partnerCountries = partners[i].countries;
+      for (var j=0; j < partnerCountries.length; j++) {
+          var partnerCountry = partnerCountries[j];
+          if ((window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
+              window.filteredPartners.push(partners[i]);
+          }
+      }
     }  
         reloadPartnerList();
 };
@@ -208,7 +205,7 @@ function reloadPartnerList() {
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
     var html = '<div class="span6">';
-    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '" data-isglobal="' + p.IsGlobal + '">';
+    html += '    <div class="Partner" data-partnership="' + p.partnership + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '">';
     html += '      <div style=" padding: 25px;">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
@@ -352,8 +349,23 @@ $(document).ready(function() {
 
   reloadPartnerList();
 });
-
-
-
-
+</script>
+<script>
+$(document).ready(function(){
+  //open any link (CMS, another module) with the class popup_link with a popup
+    if ((/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) && width < 767) {
+        //ignore popups in mobile
+    } else {
+        $('a.popup_link').each(function() {
+            if (!$(this).attr('id')) {
+                $(this).attr('id', Math.random().toString().replace('.', ''));
+            }
+            var popupH = $(this).attr('popup-height');
+            if (popupH === undefined) {
+                popupH = -1;
+            };
+            RichWidgets_Popup_Editor_init($(this).attr('id'), '', ' ', popupH, -1, $(this).attr('href'), true, true);
+        });
+    }
+});
 </script>
