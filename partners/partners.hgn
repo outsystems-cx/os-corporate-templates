@@ -156,15 +156,15 @@ $(document).ready(function() {
     }    
     var partnerCountries = partners[i].countries;    
     for (var j=0; j < partnerCountries.length; j++) {      
-        var country = partnerCountries[j];      
-        if ($.inArray(country, countries) == -1) {        
-          countries.push(country);      
-        }      
-        territoryCountryMap[territory] = territoryCountryMap[territory] || [];      
-        if ($.inArray(country, territoryCountryMap[territory]) == -1) {
-          territoryCountryMap[territory].push(country);        
-          territoryCountryMap[territory].sort();      
-        }
+       	var country = partnerCountries[j];      
+       	if ($.inArray(country, countries) == -1) {        
+       		countries.push(country);      
+       	}      
+       	territoryCountryMap[territory] = territoryCountryMap[territory] || [];      
+       	if ($.inArray(country, territoryCountryMap[territory]) == -1) {
+       		territoryCountryMap[territory].push(country);        
+       		territoryCountryMap[territory].sort();      
+      	}
     }
   }
   territories.sort();
@@ -180,15 +180,15 @@ $(document).ready(function() {
 
 function filterPartners() {
     window.filteredPartners = [];
-  for (var i=0; i < partners.length; i++) {
-      var partnerTerritory = partners[i].territory;
-      var partnerCountries = partners[i].countries;
-      for (var j=0; j < partnerCountries.length; j++) {
-          var partnerCountry = partnerCountries[j];
-          if ((window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
-              window.filteredPartners.push(partners[i]);
-          }
-      }
+	for (var i=0; i < partners.length; i++) {
+    	var partnerTerritory = partners[i].territory;
+    	var partnerCountries = partners[i].countries;
+    	for (var j=0; j < partnerCountries.length; j++) {
+        	var partnerCountry = partnerCountries[j];
+        	if ((window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
+            	window.filteredPartners.push(partners[i]);
+        	}
+    	}
     }  
         reloadPartnerList();
 };
