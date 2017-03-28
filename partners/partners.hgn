@@ -69,8 +69,8 @@
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
                 <img alt="{{Name}}" src="{{LogoLink}}">
-                <img alt="Premier" class="premiere-logo" src="/cms_backoffice/assets/20160525120234/partnerpremier">
-                <img alt="Premier" class="global-logo" src="/cms_backoffice/assets/20160525120253/partnerglobal">
+                <img alt="Elite" class="elite-logo" src="/cms_backoffice/assets/20160525120234/partnerpremier">
+                <img alt="Global" class="global-logo" src="/cms_backoffice/assets/20160525120253/partnerglobal">
                 </a>
               </div>
               <div class="PartnersInfo" style=
@@ -156,15 +156,15 @@ $(document).ready(function() {
     }    
     var partnerCountries = partners[i].countries;    
     for (var j=0; j < partnerCountries.length; j++) {      
-       	var country = partnerCountries[j];      
-       	if ($.inArray(country, countries) == -1) {        
-       		countries.push(country);      
-       	}      
-       	territoryCountryMap[territory] = territoryCountryMap[territory] || [];      
-       	if ($.inArray(country, territoryCountryMap[territory]) == -1) {
-       		territoryCountryMap[territory].push(country);        
-       		territoryCountryMap[territory].sort();      
-      	}
+        var country = partnerCountries[j];      
+        if ($.inArray(country, countries) == -1) {        
+          countries.push(country);      
+        }      
+        territoryCountryMap[territory] = territoryCountryMap[territory] || [];      
+        if ($.inArray(country, territoryCountryMap[territory]) == -1) {
+          territoryCountryMap[territory].push(country);        
+          territoryCountryMap[territory].sort();      
+        }
     }
   }
   territories.sort();
@@ -180,15 +180,15 @@ $(document).ready(function() {
 
 function filterPartners() {
     window.filteredPartners = [];
-	for (var i=0; i < partners.length; i++) {
-    	var partnerTerritory = partners[i].territory;
-    	var partnerCountries = partners[i].countries;
-    	for (var j=0; j < partnerCountries.length; j++) {
-        	var partnerCountry = partnerCountries[j];
-        	if ((window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
-            	window.filteredPartners.push(partners[i]);
-        	}
-    	}
+  for (var i=0; i < partners.length; i++) {
+      var partnerTerritory = partners[i].territory;
+      var partnerCountries = partners[i].countries;
+      for (var j=0; j < partnerCountries.length; j++) {
+          var partnerCountry = partnerCountries[j];
+          if ((window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
+              window.filteredPartners.push(partners[i]);
+          }
+      }
     }  
         reloadPartnerList();
 };
@@ -210,8 +210,8 @@ function reloadPartnerList() {
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
     html += '          <img alt="' + p.name + '" src="' + p.logo + '">';
-    html += '          <img alt="Premier" class="premiere-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120234/partnerpremier">';
-    html += '          <img alt="Premier" class="global-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120253/partnerglobal">';
+    html += '          <img alt="Elite" class="elite-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120234/partnerpremier">';
+    html += '          <img alt="Global" class="global-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120253/partnerglobal">';
     html += '          </a>';
     html += '        </div>';
     html += '        <div class="PartnersInfo" style=" width: 310px;  ">';
