@@ -38,6 +38,17 @@
     outline: none;
 }
 
+img.global-logo, img.elite-logo, img.certified-logo {
+    display: none;
+    margin-top: 0
+}
+.Partner[data-partnership='Global'] img.global-logo,
+.Partner[data-partnership='Elite'] img.elite-logo,
+.Partner[data-partnership='Certified'] img.certified-logo {
+    display: block;
+    margin-top: 10px
+}
+
 .osbtn-red.osbtn-red-new {
     border-radius: 0;
     text-transform: uppercase;
@@ -62,13 +73,14 @@
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-partnership="{{partnership}}"  data-territory="{{Territory}}" data-countries="{{Countries}}">
+          <div class="Partner" data-partnership="{{partnership}}" data-territory="{{Territory}}" data-countries="{{Countries}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
                 <img alt="{{Name}}" src="{{LogoLink}}">
-                <img alt="Elite" class="elite-logo" src="/cms_backoffice/assets/20160525120234/partnerpremier">
-                <img alt="Global" class="global-logo" src="/cms_backoffice/assets/20160525120253/partnerglobal">
+                <img alt="Certified" class="certified-logo" src="/cms_backoffice/assets/20170330170209/certified-partner">
+                <img alt="Elite" class="elite-logo" src="/cms_backoffice/assets/20170330165947/elite-partner">
+                <img alt="Global" class="global-logo" src="/cms_backoffice/assets/20170330170046/global-partner">
                 </a>
               </div>
               <div class="PartnersInfo" style=
@@ -211,13 +223,14 @@ function reloadPartnerList() {
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
     var html = '<div class="span6">';
-    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '" data-partnership="' + p.partnership + '">';
+    html += '    <div class="Partner" data-partnership="' + p.partnership + '" data-Territory="' + p.territory + '" data-Country="' + p.country + '">';
     html += '      <div style=" padding: 25px;">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
     html += '          <img alt="' + p.name + '" src="' + p.logo + '">';
-    html += '          <img alt="Elite" class="elite-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120234/partnerpremier">';
-    html += '          <img alt="Global" class="global-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120253/partnerglobal">';
+    html += '          <img alt="Certified" class="certified-logo" src="/cms_backoffice/assets/20170330170209/certified-partner">';
+    html += '          <img alt="Elite" class="elite-logo" src="/cms_backoffice/assets/20170330165928/elite-partner">';
+    html += '          <img alt="Global" class="global-logo" src="/cms_backoffice/assets/20170330170038/global-partner">';
     html += '          </a>';
     html += '        </div>';
     html += '        <div class="PartnersInfo" style=" width: 310px;  ">';
