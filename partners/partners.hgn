@@ -57,11 +57,8 @@
 
 
       <div class="span12 top40">
-        <div class=
-        "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
-        <div class="m-carousel-inner" style=
-        "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
-
+        <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
+        <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
 
         {{#.}}
         <div class="span6">
@@ -101,18 +98,25 @@
 </div>
 </div>
 
-<div class="container top50 bot40 align-center"
-     style="display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
-
-    <span style="%WEB% margin-right: 70px; %/WEB% %MOBILE% display: inline-block; margin-bottom: 20px; %/MOBILE%">
-      Want to join our partner program?
-    </span>
-    <a class="osbtn osbtn-red osbtn-red-new %MOBILE% top20 %/MOBILE%" data-name="Become Partner" data-option="" href="/partners/become-a-partner/"><span class="try-now">Apply now</span></a>
-
-</div>
-
 </div>
 </div>
+
+<div class="top40" style="background-color: #e6e6e6; %WEB% margin-bottom: -70px; %/WEB% ">
+  <div class="container">
+    <div class="row">
+
+      <div class="span12">
+        <div class="container top50 bot40 align-center" style="display: inline-block;color: #333;font-family: 'Myriad-Pro';font-size: 22px;font-weight: 600;">
+          <span style="font-size: 22px; %WEB% margin-right: 70px; %/WEB% %MOBILE% display: inline-block; margin-bottom: 20px; %/MOBILE%">
+            Want to join our partner program?
+          </span>
+          <a class="osbtn osbtn-red osbtn-red-new %MOBILE% top20 %/MOBILE%" data-name="Become Partner" data-option="" href="/partners/become-a-partner/"><span class="try-now">Apply now</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     $(document).ready(function() {
       var pathname = window.location.pathname;
