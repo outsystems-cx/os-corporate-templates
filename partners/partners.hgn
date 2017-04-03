@@ -1,12 +1,20 @@
 <style>
 
-.dropdown{
-  text-align: right;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+.partner-filter {
+    text-align: center;
+}
+
+.select-label {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
+    margin: 0 30px;
 }
 
 .select-style {
+    position: relative;
+    top: 7px;
     border: 1px solid #ccc;
     width: 150px;
     border-radius: 3px;
@@ -30,51 +38,80 @@
     outline: none;
 }
 
+.PartnerImage {
+    display: table-cell;
+    max-width: 140px;
+    margin-right: 10px;
+    vertical-align: middle;
+    text-align: center;
+    %MOBILE%
+    display: inline-block;
+    padding-bottom: 25px;
+    %/MOBILE%
+}
+.PartnerImage>a>img {
+    max-width: 140px;
+    max-height: 110px;
+}
+img.global-logo, img.elite-logo, img.certified-logo {
+    display: none;
+    margin-top: 0
+}
+.Partner[data-partnership='Global'] img.global-logo,
+.Partner[data-partnership='Elite'] img.elite-logo,
+.Partner[data-partnership='Certified'] img.certified-logo {
+    display: block;
+    margin-top: 10px
+}
+
+.PartnersInfo {
+    text-align: left;
+    font-size: 12px;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 15px;
+    %WEB%
+    width: 270px;
+    %/WEB%
+}
+
+
+.osbtn-red.osbtn-red-new {
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: .2px;
+    margin: 5px 20px;
+    padding: 15px 60px;
+    background: #dd1f00;
+    border: 1px solid #dd1f00;
+}
+
 </style>
 
 
 <div class="container">
-  <div class="row" style="padding: 7px 0px 1px; float: left;">
-    <div class="span1">
-      &nbsp;
-    </div>
-    <div class="PartnerPageSubtitle span10" style="padding-bottom: 0px;">
-      %MOBILE%
-      <div style=
-      "color: #0b0b0b; font-family: 'Myriad-Pro'; font-size: 26px; padding: 0px 0px 20px;">
-      Our Partner Network
-    </div>
-    %/MOBILE%
-    <p>OutSystems is proud to partner with innovative and leading
-      companies. Our partners use OutSystems to deliver
-      enterprise-grade custom mobile and web applications to companies
-      across the globe.</p>
-    </div>
-    <div class="span1">
-      &nbsp;
-    </div>
+  <div class="row">
 
 
       <div class="span12 top40">
-        <div class=
-        "PartnerList magiccontainer container m-carousel m-quotes m-fluid">
-        <div class="m-carousel-inner" style=
-        "%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
-
+        <div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid">
+        <div class="m-carousel-inner" style="%WEB%pointer-events: none;%/WEB% -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);">
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-ispremiere="{{isPremier}}"  data-territory="{{Territory}}" data-countries="{{Countries}}" data-isglobal="{{IsGlobal}}">
+          <div class="Partner" data-partnership="{{partnership}}" data-territory="{{Territory}}" data-countries="{{Countries}}">
             <div style=" padding: 25px;">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
                 <img alt="{{Name}}" src="{{LogoLink}}">
-                <img alt="Premier" class="premiere-logo" src="/cms_backoffice/assets/20160525120234/partnerpremier">
-                <img alt="Premier" class="global-logo" src="/cms_backoffice/assets/20160525120253/partnerglobal">
+                <img alt="Certified" class="certified-logo" src="/cms_backoffice/assets/20170330184623/certified-partner">
+                <img alt="Elite" class="elite-logo" src="/cms_backoffice/assets/20170330184326/elite-partner">
+                <img alt="Global" class="global-logo" src="/cms_backoffice/assets/20170330184502/global-partner">
                 </a>
               </div>
-              <div class="PartnersInfo" style=
-              "%WEB% width: 310px; %/WEB% %MOBILE% max-width: 310px; %/MOBILE%">
+              <div class="PartnersInfo">
               <p>{{Description}}</p>
               <div class="SeeMore" data-website="{{WithWebsite}}">
                 <a href="{{Website}}" target=
@@ -93,25 +130,32 @@
 
     </div>
     <div class="row">
-      <div class=
-      "span12 m-carousel-controls m-carousel-pagination PartnersPagination"
+      <div class="span12 m-carousel-controls m-carousel-pagination PartnersPagination"
       style=" display: inline-block;">
     </div>
   </div>
 </div>
 </div>
 
-<div class=
-"container %WEB% top50 bot60 %/WEB% %MOBILE% bot20 %/MOBILE% align-center" style=
-" display: inline-block; color: #333; font-family: 'Myriad-Pro'; font-size: 22px; font-weight: 600;">
-%WEB%Ready to take advantage of our program?%/WEB% <a class=
-"osbtn osbtn-red" data-name="Become Partner" data-option="" href=
-"/partners/become-a-partner/" id=
-"wt4_wtheader_wt19_wt30_wtListSections_ctl08_wt15" style=
-" margin-left: 70px;"><span class="try-now">Become a partner</span></a>
 </div>
 </div>
+
+<div class="top40" style="background-color: #e6e6e6; %WEB% margin-bottom: -70px; %/WEB% ">
+  <div class="container">
+    <div class="row">
+
+      <div class="span12">
+        <div class="container top50 bot40 align-center" style="display: inline-block;color: #333;font-family: 'Myriad-Pro';font-size: 22px;font-weight: 600;">
+          <span style="font-size: 22px; %WEB% margin-right: 70px; %/WEB% %MOBILE% display: inline-block; margin-bottom: 20px; %/MOBILE%">
+            Want to join our partner program?
+          </span>
+          <a class="osbtn osbtn-red osbtn-red-new %MOBILE% top20 %/MOBILE%" data-name="Become Partner" data-option="" href="/partners/become-a-partner/"><span class="try-now">Apply now</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 <script>
     $(document).ready(function() {
       var pathname = window.location.pathname;
@@ -126,8 +170,7 @@ $(document).ready(function() {
   window.partners = window.filteredPartners = $('.m-carousel-inner > .span6 .Partner').map(function() {
     var p = $(this),
         name = p.find('.PartnerImage img').attr('alt'),
-        isPremier = p.data('ispremiere'),
-        IsGlobal = p.data('isglobal'),
+        partnership = p.data('partnership'),
         territory = p.data('territory'),
         countries = p.data('countries').split('$') || [],
         website = p.find('.PartnerImage a').attr('href'),
@@ -137,8 +180,7 @@ $(document).ready(function() {
 
     return {
       name: name,
-      isPremier: isPremier,
-      IsGlobal: IsGlobal,
+      partnership: partnership,
       website: website,
       logo: logo,
       description: description,
@@ -183,7 +225,7 @@ $(document).ready(function() {
 function filterPartners() {
     window.filteredPartners = [];
 	for (var i=0; i < partners.length; i++) {
-	    var isGlobal = partners[i].isGlobal;
+      var isGlobal = partners[i].partnership == 'Global';
     	var partnerTerritory = partners[i].territory;
     	var partnerCountries = partners[i].countries;
     	for (var j=0; j < partnerCountries.length; j++) {
@@ -208,16 +250,17 @@ function reloadPartnerList() {
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
     var html = '<div class="span6">';
-    html += '    <div class="Partner" data-ispremiere="' + p.isPremier + '"  data-Territory="' + p.territory + '" data-Country="' + p.country + '" data-isglobal="' + p.IsGlobal + '">';
+    html += '    <div class="Partner" data-partnership="' + p.partnership + '" data-Territory="' + p.territory + '" data-Country="' + p.country + '">';
     html += '      <div style=" padding: 25px;">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
     html += '          <img alt="' + p.name + '" src="' + p.logo + '">';
-    html += '          <img alt="Premier" class="premiere-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120234/partnerpremier">';
-    html += '          <img alt="Premier" class="global-logo" src="https://www.outsystems.com/cms_backoffice/assets/20160525120253/partnerglobal">';
+    html += '          <img alt="Certified" class="certified-logo" src="/cms_backoffice/assets/20170330184623/certified-partner">';
+    html += '          <img alt="Elite" class="elite-logo" src="/cms_backoffice/assets/20170330184326/elite-partner">';
+    html += '          <img alt="Global" class="global-logo" src="/cms_backoffice/assets/20170330184502/global-partner">';
     html += '          </a>';
     html += '        </div>';
-    html += '        <div class="PartnersInfo" style=" width: 310px;  ">';
+    html += '        <div class="PartnersInfo">';
     html += '        <p>' + p.description + '</p>';
     html += '        <div class="SeeMore" data-website="True">';
     html += '          <a href="' + p.website + '" target="_blank">See More</a>';
@@ -347,8 +390,12 @@ $(document).ready(function() {
     selectTerritory.append('<option value="' + val + '">' + val + '</option>');
   });
 
-  var filterRow = $('<div class="row"></div>').append($('<div class="span12 dropdown" ></div>').append($('<div class="select-style"></div>').append(selectCountry)));
-  filterRow.insertBefore($('.PartnerList'));
+  var filterRow = $('<div class="span12 partner-filter top40"></div>');
+  var div1 = $('<div></div>');
+  filterRow.append(div1)
+  div1.append('<div class="select-label">Find OutSystems partners around the globe.</div>');
+  div1.append($('<div class="select-style"></div>').append(selectCountry));
+  filterRow.insertBefore($('.PartnerList').parent());
 
   reloadPartnerList();
 });
