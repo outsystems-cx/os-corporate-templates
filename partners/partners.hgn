@@ -226,6 +226,7 @@ function filterPartners() {
     window.filteredPartners = [];
 	for (var i=0; i < partners.length; i++) {
     if(window.selectCountry != ''){
+      var test = window.selectCountry;
       var isGlobal = partners[i].partnership == 'Global';
     	var partnerTerritory = partners[i].territory;
     	var partnerCountries = partners[i].countries;
