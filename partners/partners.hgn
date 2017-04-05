@@ -225,17 +225,23 @@ $(document).ready(function() {
 function filterPartners() {
     window.filteredPartners = [];
 	for (var i=0; i < partners.length; i++) {
+    //if the filter is off, push all countries to the stack
+    if(window.selectedCountry != ''){
       var isGlobal = partners[i].partnership == 'Global';
     	var partnerTerritory = partners[i].territory;
     	var partnerCountries = partners[i].countries;
     	for (var j=0; j < partnerCountries.length; j++) {
-        	var partnerCountry = partnerCountries[j];
-        	if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
-            	window.filteredPartners.push(partners[i]);
+        var partnerCountry = partnerCountries[j];
+          if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
+            window.filteredPartners.push(partners[i]);
         	}
     	}
-    }  
-        reloadPartnerList();
+    }
+    else{
+      window.filteredPartners.push(partners[i]);
+    }
+  }  
+  reloadPartnerList();
 };
 
 function reloadPartnerList() {
