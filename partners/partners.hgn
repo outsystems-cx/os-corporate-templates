@@ -53,6 +53,9 @@
     max-width: 140px;
     max-height: 110px;
 }
+.PartnerImage .level-logo {
+    margin-top: 10px;
+}
 
 .PartnersInfo {
     text-align: left;
@@ -248,14 +251,14 @@ function reloadPartnerList() {
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
     html += '            <img alt="' + p.name + '" data-original="' + p.logo + '">';
-    if (p.partnership == 'Global') {
-      html += '          <img alt="Global" class="global-logo" src="/cms_backoffice/assets/20170330184502/global-partner">';
-    } else if (p.partnership == 'Elite') {
-      html += '          <img alt="Elite" class="elite-logo" src="/cms_backoffice/assets/20170330184326/elite-partner">';
-    } else {
-      html += '          <img alt="Certified" class="certified-logo" src="/cms_backoffice/assets/20170330184623/certified-partner">';
-    }
     html += '          </a>';
+    if (p.partnership == 'Global') {
+      html += '        <img alt="Global" class="level-logo" alt="Global" src="/cms_backoffice/assets/20170330184502/global-partner">';
+    } else if (p.partnership == 'Elite') {
+      html += '        <img alt="Elite" class="level-logo" alt="Elite" src="/cms_backoffice/assets/20170330184326/elite-partner">';
+    } else {
+      html += '        <img alt="Certified" class="level-logo" alt="Certified" src="/cms_backoffice/assets/20170330184623/certified-partner">';
+    }
     html += '        </div>';
     html += '        <div class="PartnersInfo">';
     html += '        <p>' + p.description + '</p>';
