@@ -246,7 +246,7 @@ function reloadPartnerList() {
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
     var html = '<div class="span6">';
-    html += '    <div class="Partner" data-partnership="' + p.partnership + '" data-Territory="' + p.territory + '" data-Country="' + p.country + '">';
+    html += '    <div class="Partner" data-partnership="' + p.partnership + '" data-Territory="' + p.territory + '" data-Countries="' + p.countries + '">';
     html += '      <div style=" padding: 25px;">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
@@ -360,6 +360,8 @@ function reloadPartnerList() {
       });
     }
   });
+
+  var myLazyLoad = new LazyLoad();
 };
 
 function updateCountriesSelect(selectCountry) {
