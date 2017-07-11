@@ -38,7 +38,52 @@
     outline: none;
 }
 
-.PartnerImage {
+.Partner-Header {
+    position: relative;
+  overflow: hidden;
+}
+.Partner-Header .Banner {
+    height: 30px;
+    width: 105%;
+    margin-left: -3%;
+}
+.Partner.Global .Partner-Header .Banner {
+  background: linear-gradient(90deg, #F5D100 4.16%, #FAB700 61.17%);
+}
+.Partner.Elite .Partner-Header .Banner {
+  background: linear-gradient(90deg, #981D4D 4.1%, #6F243D 60.17%);
+}
+.Partner.Certified .Partner-Header .Banner {
+  background: linear-gradient(90deg, #80B4D9 5.95%, #558DCA 60.17%);
+}
+.Partner-Header .Banner-Label {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+}
+.Partner-Header .Banner-Black {
+    position: relative;
+    width: 37%;
+    height: 100%;
+    background: #3F3B39;
+    transform: skew(-30deg);
+}
+.Partner-Header .Banner-White {
+    position: absolute;
+    right: -3px;
+    width: 6px;
+    height: 100%;
+    background: white;
+}
+
+.Partner-Body {
+    padding: 0 20px;
+}
+.Partner-Body .PartnerImage {
     display: table-cell;
     max-width: 140px;
     margin-right: 10px;
@@ -48,27 +93,60 @@
     display: inline-block;
     padding-bottom: 25px;
     %/MOBILE%
+    height: 134px;
 }
-.PartnerImage>a>img {
+.Partner-Body .PartnerImage>a>img {
     max-width: 140px;
     max-height: 110px;
 }
-.PartnerImage .level-logo {
+.Partner-Body .PartnerImage .level-logo {
     margin-top: 10px;
 }
-
-.PartnersInfo {
+.Partner-Body .PartnersInfo {
     text-align: left;
     font-size: 12px;
     height: 100%;
     display: table-cell;
     vertical-align: middle;
-    padding-left: 15px;
+    padding-left: 40px;
     %WEB%
-    width: 270px;
+    width: 250px;
     %/WEB%
 }
 
+.Partner-Footer {
+  padding: 0 20px;
+  height: 46px;
+  line-height: 44px;
+  background: #F2F2F2;
+}
+.Partner-Footer .Partner-Professionals {
+    font-size: 12px;
+    display: inline-block;
+    color: #828282;
+    width: 180px;
+}
+.Partner-Footer span {
+  line-height: 46px;
+}
+.Partner-Footer .PartnerWebsite,
+.Partner-Footer .ContactPartner {
+    display: inline-block;
+    font-weight: 200;
+    color: #0088cc;
+    font-size: 12px;
+    padding-right: 25px;
+}
+.Partner-Footer .PartnerWebsite {
+    background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094453/partner_website.png) no-repeat right;
+}
+.Partner-Footer .ContactPartner {
+    margin-left: 20px;
+    background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094335/contact_partner.png) no-repeat right;
+}
+.Partner-Footer .ContactPartner .popup_link {
+  line-height: inherit;
+}
 
 .osbtn-red.osbtn-red-new {
     border-radius: 0;
@@ -94,29 +172,45 @@
 
         {{#.}}
         <div class="span6">
-          <div class="Partner" data-name={{Name}} data-partnership="{{partnership}}" data-territory="{{Territory}}" data-countries="{{Countries}}" data-website="{{Website}}" data-logo="{{LogoLink}}">
-            <div style=" padding: 25px;">
+          <div class="Partner {{Partnership}}" data-name={{Name}} data-partnership="{{Partnership}}"  data-certified-professionals="{{NumberOfCertifiedProfessionals}}" data-territory="{{Territory}}" data-countries="{{Countries}}" data-categories="{{Categories}}" data-industries="{{Industries}}" data-website="{{Website}}" data-logo="{{LogoLink}}">
+            <div class="Partner-Header">
+              <div class="Banner">
+                <div class="Banner-Label">
+                  {{Partnership}} Partner
+                </div>
+                <div class="Banner-Black">
+                  <div class="Banner-White">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Partner-Body">
               <div class="PartnerImage">
                 <a href="{{Website}}" target="_blank">
                 <img alt="{{Name}}" data-original="{{LogoLink}}">
                 </a>
               </div>
               <div class="PartnersInfo">
-              <p>{{Description}}</p>
-              <div class="SeeMore" data-website="{{WithWebsite}}">
-                <a href="{{Website}}" target=
-                "_blank">See More</a>
+                <p>{{Description}}</p>
               </div>
-              <div class="SeeMore">
+            </div>
+            <div class="Partner-Footer">
+              <span class="Partner-Professionals">
+                {{CertifiedProfessionals}} Certified Professionals
+              </span>
+              <span class="PartnerWebsite" data-website="{{WithWebsite}}">
+                <a href="{{Website}}" target=
+                "_blank">Partner Website</a>
+              </span>
+              <span class="ContactPartner">
                 <a class="popup_link" href=
                 "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
                 Contact Partner</a>
-              </div>
+              </span>
             </div>
           </div>
         </div>
-      </div>
-      {{/.}}
+        {{/.}}
 
     </div>
     <div class="row">
@@ -161,8 +255,11 @@ $(document).ready(function() {
     var p = $(this),
         name = p.data('name'),
         partnership = p.data('partnership'),
+        certifiedProfessionals = p.data('certified-professionals'),
         territory = p.data('territory'),
         countries = p.data('countries').split('$') || [],
+        categories = p.data('categories').split('$') || [],
+        industries = p.data('industries').split('$') || [],
         website = p.data('website'),
         logo = p.data('logo'),
         description = p.find('.PartnersInfo p').text(),
@@ -171,12 +268,15 @@ $(document).ready(function() {
     return {
       name: name,
       partnership: partnership,
+      certifiedProfessionals: certifiedProfessionals,
       website: website,
       logo: logo,
       description: description,
       contactLink: contactLink,
       territory: territory,
-      countries: countries
+      countries: countries,
+      categories: categories,
+      industries: industries
     };
   });
 
@@ -245,33 +345,44 @@ function reloadPartnerList() {
 
   var x = $('.m-carousel-inner');
   $(window.filteredPartners).each(function(i, p){
-    var html = '<div class="span6">';
-    html += '    <div class="Partner" data-partnership="' + p.partnership + '" data-Territory="' + p.territory + '" data-Country="' + p.country + '">';
-    html += '      <div style=" padding: 25px;">';
+ var html = '  <div class="span6">';
+    html += '    <div class="Partner ' + p.partnership + '" data-partnership="' + p.partnership + '" data-certified-professionals="' + p.certifiedProfessionals + '" data-Territory="' + p.territory + '" data-Countries="' + p.countries + '" data-Categories="' + p.categories + '" data-Industries="' + p.industries + '">';
+    html += '      <div class="Partner-Header">';
+    html += '        <div class="Banner">';
+    html += '          <div class="Banner-Label">';
+    html += '            ' + p.partnership + ' Partner';
+    html += '          </div>';
+    html += '          <div class="Banner-Black">';
+    html += '            <div class="Banner-White">';
+    html += '            </div>';
+    html += '          </div>';
+    html += '        </div>';
+    html += '      </div>';
+    html += '      <div class="Partner-Body">';
     html += '        <div class="PartnerImage">';
     html += '          <a href="' + p.website + '" target="_blank">';
     html += '            <img alt="' + p.name + '" data-original="' + p.logo + '">';
     html += '          </a>';
-    if (p.partnership == 'Global') {
-      html += '        <img alt="Global" class="level-logo" alt="Global" src="/cms_backoffice/assets/20170330184502/global-partner">';
-    } else if (p.partnership == 'Elite') {
-      html += '        <img alt="Elite" class="level-logo" alt="Elite" src="/cms_backoffice/assets/20170330184326/elite-partner">';
-    } else {
-      html += '        <img alt="Certified" class="level-logo" alt="Certified" src="/cms_backoffice/assets/20170330184623/certified-partner">';
-    }
     html += '        </div>';
     html += '        <div class="PartnersInfo">';
-    html += '        <p>' + p.description + '</p>';
-    html += '        <div class="SeeMore" data-website="True">';
-    html += '          <a href="' + p.website + '" target="_blank">See More</a>';
+    html += '          <p>' + p.description + '</p>';
     html += '        </div>';
-    html += '        <div class="SeeMore">';
+    html += '      </div>';
+    html += '      <div class="Partner-Footer">';
+    html += '        <span class="Partner-Professionals">';
+    if (p.certifiedProfessionals) {
+      html += '          ' + p.certifiedProfessionals + ' Certified Professionals';
+    }
+    html += '        </span>';
+    html += '        <span class="PartnerWebsite" data-website="True">';
+    html += '          <a href="' + p.website + '" target="_blank">Partner Website</a>';
+    html += '        </span>';
+    html += '        <span class="ContactPartner">';
     html += '          <a class="popup_link" href="' + p.contactLink + '">Contact Partner</a>';
-    html += '        </div>';
+    html += '        </span>';
     html += '      </div>';
     html += '    </div>';
     html += '  </div>';
-    html += '</div>';
     x.append(html);
   });
 
