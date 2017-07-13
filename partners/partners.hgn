@@ -1,5 +1,19 @@
 <style>
 
+.tech-partners {
+    %WEB%
+    float: right;
+    max-width: 220px;
+    %/WEB%
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 26px;
+}
+.tech-partners a {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
 .partner-filter {
 }
 
@@ -7,17 +21,17 @@
     display: block;
     font-size: 24px;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin: 25px 0;
 }
 
 .select-style {
     border: 1px solid #ccc;
-    width: 190px;
+    width: 215px;
     border-radius: 3px;
     overflow: hidden;
     background: #fff url("/partnerarea/img/arrowdown.gif") no-repeat 95% 50%;
     display: inline-block;
-    margin-right: 40px;
+    margin-right: 20px;
     %MOBILE%
     width: 95%;
     margin-bottom: 10px;
@@ -477,7 +491,7 @@ function reloadPartnerList() {
 
   if (window.filteredPartners.length == 0) {
     var html = '<div class="PartnerList container row">';
-    html +=    '  <div class="span12 top60 partners-no-results">';
+    html +=    '  <div class="span12 top20 bot20 partners-no-results">';
     html +=    '    <div>';
     html +=    '      Sorry, but there are no matches for your selection.';
     html +=    '      <br/>';
@@ -699,13 +713,27 @@ $(document).ready(function() {
   });
   updateIndustriesSelect(selectIndustry);
 
-  var filterRow = $('<div class="span12 partner-filter top40"></div>');
+  
+  var div0 = $('<div></div>');
+  var techPartnersHtml = '';
+  techPartnersHtml += '<div class="tech-partners">';
+  techPartnersHtml += '  Looking For Technology Partners?';
+  techPartnersHtml += '  <br>';
+  techPartnersHtml += '  <a href="https://www.outsystems.com/forge/">';
+  techPartnersHtml += '    Find 1000+ components &amp; integrations in the Forge.';
+  techPartnersHtml += '  </a>';
+  techPartnersHtml += '</div>';
+  div0.append(techPartnersHtml);
+  
   var div1 = $('<div></div>');
-  filterRow.append(div1)
   div1.append('<div class="select-label">Find OutSystems partners around the globe.</div>');
   div1.append($('<div class="select-style"></div>').append(selectCountry));
   div1.append($('<div class="select-style"></div>').append(selectCategory));
   div1.append($('<div class="select-style"></div>').append(selectIndustry));
+  
+  var filterRow = $('<div class="span12 partner-filter top40"></div>');
+  filterRow.append(div0);
+  filterRow.append(div1);
   filterRow.insertBefore($('.PartnerList').parent());
 
   reloadPartnerList();
