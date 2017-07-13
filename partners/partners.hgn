@@ -198,6 +198,22 @@
   line-height: inherit;
 }
 
+.partners-no-results {
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    color: #bebebe;
+}
+.partners-no-results .contact-sales {
+    margin-top: 15px;
+    font-size: 18px;
+}
+.partners-no-results .contact-sales a {
+    color: #bebebe;
+    text-decoration: underline;
+}
+
+
 .osbtn-red.osbtn-red-new {
     border-radius: 0;
     text-transform: uppercase;
@@ -458,6 +474,27 @@ function filterPartners() {
 
 function reloadPartnerList() {
   var orig = $('.PartnerList');
+
+  if (window.filteredPartners.length == 0) {
+    var html = '<div class="PartnerList container row">';
+    html +=    '  <div class="span12 top60 partners-no-results">';
+    html +=    '    <div>';
+    html +=    '      Sorry, but there are no matches for your selection.';
+    html +=    '      <br/>';
+    html +=    '      Feel free to try a broader search.';
+    html +=    '    </div>';
+    html +=    '    <div class="contact-sales">';
+    html +=    '      Still need help? ';
+    html +=    '      <a href="https://www.outsystems.com/goto/contact-sales">Contact Sales</a>';
+    html +=    '    </div>';
+    html +=    '  </div>';
+    html +=    '</div>';
+    var newRoot = $(html);
+    newRoot.insertBefore(orig);
+    orig.remove();
+    return;
+  }
+
   var newRoot = $('<div class="PartnerList magiccontainer container m-carousel m-quotes m-fluid"></div>');
   newRoot.html('<div class="m-carousel-inner" style="pointer-events: none; -webkit-transition-property: all; transition-property: all; -webkit-transition-timing-function: ease; transition-timing-function: ease; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px);"></div><div class="row"><div class="span12 m-carousel-controls m-carousel-pagination PartnersPagination" style=" display: inline-block;"></div></div>');
   newRoot.insertBefore(orig);
