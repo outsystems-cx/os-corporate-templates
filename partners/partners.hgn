@@ -257,9 +257,12 @@ $(document).ready(function() {
         partnership = p.data('partnership'),
         certifiedProfessionals = p.data('certified-professionals'),
         territory = p.data('territory'),
-        countries = p.data('countries').split('$') || [],
-        categories = p.data('categories').split('$') || [],
-        industries = p.data('industries').split('$') || [],
+        countries = p.data('countries'),
+        countries = (countries == '' ? [] : countries.split('$')),
+        categories = p.data('categories'),
+        categories = (categories == '' ? [] : categories.split('$')),
+        industries = p.data('industries'),
+        industries = (industries == '' ? [] : industries.split('$')),
         website = p.data('website'),
         logo = p.data('logo'),
         description = p.find('.PartnersInfo p').text(),
@@ -308,26 +311,87 @@ $(document).ready(function() {
   window.countries = countries;
   window.territoryCountryMap = territoryCountryMap;
   window.selectedTerritory = window.selectedCountry = '';
+
+  var categories = [];
+  for (var i=0; i < partners.length; i++) {
+    var partnerCategories = partners[i].categories;
+    for (var j=0; j < partnerCategories.length; j++) {
+      var category = partnerCategories[j];
+      if ($.inArray(category, categories) == -1) {
+        categories.push(category);
+      }
+    }
+  }
+  categories.sort();
+  window.categories = categories;
+  window.selectedCategory = '';
+
+  var industries = [];
+  for (var i=0; i < partners.length; i++) {
+    var partnerIndustries = partners[i].industries;
+    for (var j=0; j < partnerIndustries.length; j++) {
+      var industry = partnerIndustries[j];
+      if ($.inArray(industry, industries) == -1) {
+        industries.push(industry);
+      }
+    }
+  }
+  industries.sort();
+  window.industries = industries;
+  window.selectedIndustry = '';
+
 });
 
 
 
 function filterPartners() {
-    window.filteredPartners = [];
+  window.filteredPartners = [];
 	for (var i=0; i < partners.length; i++) {
-    //if the filter is off, push all countries to the stack
-    if(window.selectedCountry != ''){
+
+    var matchesCountryFilter = false;
+    if (window.selectedCountry != '') {
       var isGlobal = partners[i].partnership == 'Global';
     	var partnerTerritory = partners[i].territory;
     	var partnerCountries = partners[i].countries;
     	for (var j=0; j < partnerCountries.length; j++) {
         var partnerCountry = partnerCountries[j];
-          if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
-            window.filteredPartners.push(partners[i]);
-        	}
+        if (isGlobal || (window.selectedTerritory == '' || partnerTerritory == window.selectedTerritory) && (window.selectedCountry == '' || partnerCountry == window.selectedCountry)) {
+          matchesCountryFilter = true;
+          break;
+        }
     	}
+    } else {
+      matchesCountryFilter = true;
     }
-    else{
+
+    var matchesCategoryFilter = false;
+    if (window.selectedCategory != '') {
+      var partnerCategories = partners[i].categories;
+      for (var j=0; j < partnerCategories.length; j++) {
+        var category = partnerCategories[j];
+        if (category == window.selectedCategory) {
+          matchesCategoryFilter = true;
+          break;
+        }
+      }
+    } else {
+      matchesCategoryFilter = true;
+    }
+
+    if (window.selectedIndustry != '') {
+      var partnerIndustries = partners[i].industries;
+      for (var j=0; j < partnerIndustries.length; j++) {
+        var partnerIndustry = partnerIndustries[j];
+        if (partnerIndustry == window.selectedIndustry) {
+          matchesIndustryFilter = true;
+          break;
+        }
+      }
+    } else {
+      matchesIndustryFilter = true;
+    }
+
+    if (matchesCountryFilter && matchesCategoryFilter && matchesIndustryFilter) {
       window.filteredPartners.push(partners[i]);
     }
   }  
@@ -483,6 +547,30 @@ function updateCountriesSelect(selectCountry) {
   });
 };
 
+function updateCategoriesSelect(selectCategory) {
+  selectCategory.html('');
+  selectCategory.append('<option value="">Select type of service</option>');
+  $(window.categories).each(function(i, val){
+    var label = val;
+    if (val.indexOf('-')) {
+      label = val.split('-')[1];
+    }
+    selectCategory.append('<option value="' + val + '">' + label + '</option>');
+  });
+};
+
+function updateIndustriesSelect(selectIndustry) {
+  selectIndustry.html('');
+  selectIndustry.append('<option value="">Select industry</option>');
+  $(window.industries).each(function(i, val){
+    var label = val;
+    if (val.indexOf('-')) {
+      label = val.split('-')[1];
+    }
+    selectIndustry.append('<option value="' + val + '">' + label + '</option>');
+  });
+};
+
 $(document).ready(function() {
   var selectCountry = $('<select id="country"></select>').change(function() {
     window.selectedCountry = $(this).val();
@@ -501,11 +589,25 @@ $(document).ready(function() {
     selectTerritory.append('<option value="' + val + '">' + val + '</option>');
   });
 
+  var selectCategory = $('<select id="category"></select>').change(function() {
+    window.selectedCategory = $(this).val();
+    filterPartners();
+  });
+  updateCategoriesSelect(selectCategory);
+
+  var selectIndustry = $('<select id="industry"></select>').change(function() {
+    window.selectIndustry = $(this).val();
+    filterPartners();
+  });
+  updateIndustriesSelect(selectIndustry);
+
   var filterRow = $('<div class="span12 partner-filter top40"></div>');
   var div1 = $('<div></div>');
   filterRow.append(div1)
   div1.append('<div class="select-label">Find OutSystems partners around the globe.</div>');
   div1.append($('<div class="select-style"></div>').append(selectCountry));
+  div1.append($('<div class="select-style"></div>').append(selectCategory));
+  div1.append($('<div class="select-style"></div>').append(selectIndustry));
   filterRow.insertBefore($('.PartnerList').parent());
 
   reloadPartnerList();
