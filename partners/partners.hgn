@@ -1,28 +1,23 @@
 <style>
 
 .partner-filter {
-    text-align: center;
 }
 
 .select-label {
-    display: inline-block;
+    display: block;
     font-size: 24px;
     font-weight: 300;
-    line-height: 29px;
-    margin: 0 30px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .select-style {
-    position: relative;
-    top: 7px;
     border: 1px solid #ccc;
-    width: 150px;
+    width: 190px;
     border-radius: 3px;
     overflow: hidden;
     background: #fff url("/partnerarea/img/arrowdown.gif") no-repeat 95% 50%;
     display: inline-block;
-    margin-left: 10px;
+    margin-right: 40px;
     %MOBILE%
     width: 95%;
     margin-bottom: 10px;
