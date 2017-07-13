@@ -435,6 +435,7 @@ function filterPartners() {
       matchesCategoryFilter = true;
     }
 
+    var matchesIndustryFilter = false;
     if (window.selectedIndustry != '') {
       var partnerIndustries = partners[i].industries;
       for (var j=0; j < partnerIndustries.length; j++) {
@@ -656,7 +657,7 @@ $(document).ready(function() {
   updateCategoriesSelect(selectCategory);
 
   var selectIndustry = $('<select id="industry"></select>').change(function() {
-    window.selectIndustry = $(this).val();
+    window.selectedIndustry = $(this).val();
     filterPartners();
   });
   updateIndustriesSelect(selectIndustry);
