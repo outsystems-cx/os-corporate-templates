@@ -10,6 +10,7 @@
     font-weight: 300;
     line-height: 29px;
     margin: 0 30px;
+    margin-bottom: 25px;
 }
 
 .select-style {
@@ -22,6 +23,10 @@
     background: #fff url("/partnerarea/img/arrowdown.gif") no-repeat 95% 50%;
     display: inline-block;
     margin-left: 10px;
+    %MOBILE%
+    width: 95%;
+    margin-bottom: 10px;
+    %/MOBILE%
 }
 
 .select-style select {
@@ -36,6 +41,17 @@
 
 .select-style select:focus {
     outline: none;
+}
+
+.Partner {
+    display: block;
+    margin: 0;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,.08);
+    border: 1px solid #E4E4E4;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .Partner-Header {
@@ -81,19 +97,23 @@
 }
 
 .Partner-Body {
+    %MOBILE%
     padding: 0 20px;
+    %/MOBILE%
 }
 .Partner-Body .PartnerImage {
+    %WEB%
     display: table-cell;
-    max-width: 140px;
-    margin-right: 10px;
+    height: 134px;
     vertical-align: middle;
-    text-align: center;
+    padding: 0 20px;
+    %/WEB%
     %MOBILE%
     display: inline-block;
-    padding-bottom: 25px;
+    padding: 10px 0;
     %/MOBILE%
-    height: 134px;
+    width: 140px;
+    text-align: center;
 }
 .Partner-Body .PartnerImage>a>img {
     max-width: 140px;
@@ -103,45 +123,80 @@
     margin-top: 10px;
 }
 .Partner-Body .PartnersInfo {
-    text-align: left;
-    font-size: 12px;
-    height: 100%;
     display: table-cell;
-    vertical-align: middle;
-    padding-left: 40px;
-    %WEB%
     width: 250px;
-    %/WEB%
+    height: 100%;
+    vertical-align: middle;
+    font-size: 12px;
+    text-align: left;
+    %MOBILE%
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    %/MOBILE%
 }
 
 .Partner-Footer {
-  padding: 0 20px;
-  height: 46px;
-  line-height: 44px;
-  background: #F2F2F2;
+    display: block;
+    %MOBILE%
+    padding: 10px 0;
+    %/MOBILE%
+    background: #F2F2F2;
+}
+.Partner-Footer > span {
+    %WEB%
+    display: table-cell;
+    height: 46px;
+    vertical-align: middle;
+    %/WEB%
 }
 .Partner-Footer .Partner-Professionals {
-    font-size: 12px;
-    display: inline-block;
-    color: #828282;
+    %WEB%
     width: 180px;
+    %/WEB%
+    %MOBILE%
+    display:block;
+    width: 100%;
+    %/MOBILE%
+    font-size: 12px;
+    text-align: center;
 }
-.Partner-Footer span {
-  line-height: 46px;
+.Partner-Footer .Partner-Professionals span {
+    %MOBILE%
+    padding-bottom: 10px;
+    %/MOBILE%
+}
+.Partner-Footer .Partner-Professionals .Professionals-Number {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: right;
+    margin-right: 5px;
+}
+.Partner-Footer .Partner-Professionals .Professionals-Label {
+    display: inline-block;
+    line-height: 12px;
+    text-align: left;
 }
 .Partner-Footer .PartnerWebsite,
 .Partner-Footer .ContactPartner {
-    display: inline-block;
+    display: table-cell;
     font-weight: 200;
     color: #0088cc;
     font-size: 12px;
     padding-right: 25px;
+    %MOBILE%
+    display: inline-block;
+    line-height: 26px;
+    %/MOBILE%
 }
 .Partner-Footer .PartnerWebsite {
     background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094453/partner_website.png) no-repeat right;
 }
 .Partner-Footer .ContactPartner {
-    margin-left: 20px;
+    padding-left: 20px;
     background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094335/contact_partner.png) no-repeat right;
 }
 .Partner-Footer .ContactPartner .popup_link {
@@ -191,12 +246,13 @@
                 </a>
               </div>
               <div class="PartnersInfo">
-                <p>{{Description}}</p>
+                <span>{{Description}}</span>
               </div>
             </div>
             <div class="Partner-Footer">
               <span class="Partner-Professionals">
-                {{CertifiedProfessionals}} Certified Professionals
+                <span class="Professionals-Number">{{CertifiedProfessionals}}</span>
+                <span class="Professionals-Label">Certified<br/>Professionals</span>
               </span>
               <span class="PartnerWebsite" data-website="{{WithWebsite}}">
                 <a href="{{Website}}" target=
@@ -271,8 +327,8 @@ $(document).ready(function() {
         industries = (industries == '' ? [] : industries.split('$')),
         website = p.data('website'),
         logo = p.data('logo'),
-        description = p.find('.PartnersInfo p').text(),
-        contactLink = p.find('.PartnersInfo .popup_link').attr('href');
+        description = p.find('.PartnersInfo span').text(),
+        contactLink = p.find('.ContactPartner .popup_link').attr('href');
 
     return {
       name: name,
@@ -435,13 +491,14 @@ function reloadPartnerList() {
     html += '          </a>';
     html += '        </div>';
     html += '        <div class="PartnersInfo">';
-    html += '          <p>' + p.description + '</p>';
+    html += '          <span>' + p.description + '</span>';
     html += '        </div>';
     html += '      </div>';
     html += '      <div class="Partner-Footer">';
     html += '        <span class="Partner-Professionals">';
     if (p.certifiedProfessionals) {
-      html += '          ' + p.certifiedProfessionals + ' Certified Professionals';
+    html += '          <span class="Professionals-Number">' + p.certifiedProfessionals + '</span>';
+    html += '          <span class="Professionals-Label">Certified<br/>Professionals</span>';
     }
     html += '        </span>';
     html += '        <span class="PartnerWebsite" data-website="True">';
@@ -531,8 +588,8 @@ function reloadPartnerList() {
   updateCarouselQuotesControls();
 
   var size = 250;
-  var p = $('.PartnersInfo p');
-  p.each(function(index, el) {
+  var desc = $('.PartnersInfo span');
+  desc.each(function(index, el) {
     textDefault = $.trim($(el).text());
     if (textDefault.length > size) {
       $(el).attr('title', textDefault);
