@@ -202,11 +202,11 @@
     %/MOBILE%
 }
 .Partner-Footer .PartnerWebsite {
-    background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094453/partner_website.png) no-repeat right;
+    background: url(/cms_backoffice/assets/20170712094453/partner_website.png) no-repeat right;
 }
 .Partner-Footer .ContactPartner {
     padding-left: 20px;
-    background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094335/contact_partner.png) no-repeat right;
+    background: url(/cms_backoffice/assets/20170712094335/contact_partner.png) no-repeat right;
 }
 .Partner-Footer .ContactPartner .popup_link {
   line-height: inherit;
