@@ -546,9 +546,6 @@ function reloadPartnerList() {
     html += '        <span class="PartnerWebsite" data-website="True">';
     html += '          <a href="' + p.website + '" target="_blank">Partner Website</a>';
     html += '        </span>';
-    html += '        <span class="ContactPartner">';
-    html += '          <a class="popup_link" href="' + p.contactLink + '">Contact Partner</a>';
-    html += '        </span>';
     html += '      </div>';
     html += '    </div>';
     html += '  </div>';
