@@ -283,11 +283,6 @@
                 <a href="{{Website}}" target=
                 "_blank">Partner Website</a>
               </span>
-              <span class="ContactPartner">
-                <a class="popup_link" href=
-                "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
-                Contact Partner</a>
-              </span>
             </div>
           </div>
         </div>
