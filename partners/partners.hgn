@@ -284,7 +284,7 @@
                 "_blank">Partner Website</a>
               </span>
               <span class="ContactPartner">
-                <a class="popup_link" href=
+                <a class="viewpartner" href=
                 "/partners/PartnerProfile/{{Id}}/{{Name}}">
                 Contact Partner</a>
               </span>
