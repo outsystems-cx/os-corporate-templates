@@ -285,7 +285,7 @@
               </span>
               <span class="ContactPartner">
                 <a class="popup_link" href=
-                "/partners/PartnerProfile/{{Id}}">
+                "/partners/PartnerProfile/{{Id}}/{{Name}}">
                 Contact Partner</a>
               </span>
             </div>
