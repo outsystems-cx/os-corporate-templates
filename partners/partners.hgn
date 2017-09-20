@@ -286,7 +286,7 @@
               <span class="ContactPartner">
                 <a class="viewpartner" href=
                 "/partners/PartnerProfile/{{Id}}/{{Name}}">
-                Contact Partner</a>
+                Learn More</a>
               </span>
             </div>
           </div>
@@ -552,7 +552,7 @@ function reloadPartnerList() {
     html += '          <a href="' + p.website + '" target="_blank">Partner Website</a>';
     html += '        </span>';
     html += '        <span class="ContactPartner">';
-    html += '          <a class="viewpartner" href="' + p.contactLink + '">View Partner</a>';
+    html += '          <a class="viewpartner" href="' + p.contactLink + '">Learn More</a>';
     html += '        </span>';
     html += '      </div>';
     html += '    </div>';
