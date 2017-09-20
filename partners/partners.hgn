@@ -202,11 +202,11 @@
     %/MOBILE%
 }
 .Partner-Footer .PartnerWebsite {
-    background: url(/cms_backoffice/assets/20170712094453/partner_website.png) no-repeat right;
+    background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094453/partner_website.png) no-repeat right;
 }
 .Partner-Footer .ContactPartner {
     padding-left: 20px;
-    background: url(/cms_backoffice/assets/20170712094335/contact_partner.png) no-repeat right;
+    background: url(https://extranetdev.outsystems.net/cms_backoffice/assets/20170712094335/contact_partner.png) no-repeat right;
 }
 .Partner-Footer .ContactPartner .popup_link {
   line-height: inherit;
@@ -284,9 +284,9 @@
                 "_blank">Partner Website</a>
               </span>
               <span class="ContactPartner">
-                <a class="popup_link" href=
-                "/PartnerArea/PartnerContact.aspx?PartnerId={{Id}}">
-                Contact Partner</a>
+                <a class="viewpartner" href=
+                "/partners/PartnerProfile/{{Id}}/{{Name}}/">
+                Learn More</a>
               </span>
             </div>
           </div>
@@ -353,7 +353,7 @@ $(document).ready(function() {
         website = p.data('website'),
         logo = p.data('logo'),
         description = p.find('.PartnersInfo span').text(),
-        contactLink = p.find('.ContactPartner .popup_link').attr('href');
+        contactLink = p.find('.ContactPartner .viewpartner').attr('href');
 
     return {
       name: name,
@@ -552,7 +552,7 @@ function reloadPartnerList() {
     html += '          <a href="' + p.website + '" target="_blank">Partner Website</a>';
     html += '        </span>';
     html += '        <span class="ContactPartner">';
-    html += '          <a class="popup_link" href="' + p.contactLink + '">Contact Partner</a>';
+    html += '          <a class="viewpartner" href="' + p.contactLink + '">Learn More</a>';
     html += '        </span>';
     html += '      </div>';
     html += '    </div>';
