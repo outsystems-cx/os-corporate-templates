@@ -285,7 +285,7 @@
               </span>
               <span class="ContactPartner">
                 <a class="viewpartner" href=
-                "/partners/PartnerProfile/{{Id}}/{{Name}}">
+                "/partners/PartnerProfile/{{Id}}/{{Name}}/">
                 Learn More</a>
               </span>
             </div>
